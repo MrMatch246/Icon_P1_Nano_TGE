@@ -1,7 +1,3 @@
-# Decompiled with PyLingual (https://pylingual.io)
-# Internal filename: ..\..\..\output\Live\win_64_static\Release\python-bundle\MIDI Remote Scripts\MackieControl\SoftwareController.py
-# Bytecode version: 3.11a7e (3495)
-# Source timestamp: 2024-09-26 15:27:47 UTC (1727364467)
 import sys
 
 from .P1NanoTGEComponent import *
