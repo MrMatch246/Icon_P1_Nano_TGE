@@ -4,11 +4,11 @@
 # Source timestamp: 2024-09-26 15:27:47 UTC (1727364467)
 import sys,traceback
 
-from .MackieControl import MackieControl
+from .P1NanoTGE import P1NanoTGE
 
 
 def create_instance(c_instance):
-    return MackieControl(c_instance)
+    return P1NanoTGE(c_instance)
 
         
 

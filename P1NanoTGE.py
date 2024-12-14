@@ -16,7 +16,7 @@ from .Transport import Transport
 from .consts import *
 
 
-class MackieControl(object):
+class P1NanoTGE(object):
     """
         Main class that establishes the Mackie Control <-> Live interaction. It acts
         as a container/manager for all the Mackie Control sub-components like ChannelStrips,

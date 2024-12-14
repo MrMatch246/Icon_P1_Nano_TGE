@@ -4,14 +4,14 @@
 # Source timestamp: 2024-09-26 15:27:47 UTC (1727364467)
 import sys
 
-from .MackieControlComponent import *
+from .P1NanoTGEComponent import *
 
 
-class SoftwareController(MackieControlComponent):
+class SoftwareController(P1NanoTGEComponent):
     """ Representing the buttons above the transport, including the basic: """
 
     def __init__(self, main_script):
-        MackieControlComponent.__init__(self, main_script)
+        P1NanoTGEComponent.__init__(self, main_script)
         self.__last_can_undo_state = False
         self.__last_can_redo_state = False
         av = self.application().view
@@ -50,7 +50,7 @@ class SoftwareController(MackieControlComponent):
             self.send_midi((NOTE_ON_STATUS, note, BUTTON_STATE_OFF))
         for note in function_key_control_switch_ids:
             self.send_midi((NOTE_ON_STATUS, note, BUTTON_STATE_OFF))
-        MackieControlComponent.destroy(self)
+        P1NanoTGEComponent.destroy(self)
 
     def handle_function_key_switch_ids(self, switch_id, value):
         return

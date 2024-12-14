@@ -6,14 +6,14 @@ import sys
 
 import Live
 
-from .MackieControlComponent import *
+from .P1NanoTGEComponent import *
 
 
-class TimeDisplay(MackieControlComponent):
+class TimeDisplay(P1NanoTGEComponent):
     """ Represents the Mackie Controls Time-Display, plus the two LED's that show the assignment """
 
     def __init__(self, main_script):
-        MackieControlComponent.__init__(self, main_script)
+        P1NanoTGEComponent.__init__(self, main_script)
         self.__main_script = main_script
         self.__show_beat_time = False
         self.__smpt_format = Live.Song.TimeFormat.smpte_25
@@ -22,7 +22,7 @@ class TimeDisplay(MackieControlComponent):
 
     def destroy(self):
         self.clear_display()
-        MackieControlComponent.destroy(self)
+        P1NanoTGEComponent.destroy(self)
 
     def show_beats(self):
         self.__show_beat_time = True

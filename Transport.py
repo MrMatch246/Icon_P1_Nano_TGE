@@ -5,14 +5,14 @@
 import sys
 
 from ableton.v2.base import move_current_song_time
-from .MackieControlComponent import *
+from .P1NanoTGEComponent import *
 import Live
 
-class Transport(MackieControlComponent):
+class Transport(P1NanoTGEComponent):
     """ Representing the transport section of the Mackie Control: """
 
     def __init__(self, main_script):
-        MackieControlComponent.__init__(self, main_script)
+        P1NanoTGEComponent.__init__(self, main_script)
         self.__forward_button_down = False
         self.____rewind_button_down = False
         self.__zoom_button_down = False
@@ -53,7 +53,7 @@ class Transport(MackieControlComponent):
             self.send_midi((NOTE_ON_STATUS, note, BUTTON_STATE_OFF))
         for note in marker_control_switch_ids:
             self.send_midi((NOTE_ON_STATUS, note, BUTTON_STATE_OFF))
-        MackieControlComponent.destroy(self)
+        P1NanoTGEComponent.destroy(self)
 
     def refresh_state(self):
         self.__update_play_button_led()

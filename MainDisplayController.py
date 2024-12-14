@@ -4,10 +4,10 @@
 # Source timestamp: 2024-09-26 15:27:47 UTC (1727364467)
 import sys
 
-from .MackieControlComponent import *
+from .P1NanoTGEComponent import *
 
 
-class MainDisplayController(MackieControlComponent):
+class MainDisplayController(P1NanoTGEComponent):
     """
         Controlling all available main displays (the display above the channel strips),
         which will be only one when only using the 'main' Mackie Control, and severals
@@ -22,7 +22,7 @@ class MainDisplayController(MackieControlComponent):
     """
 
     def __init__(self, main_script, display):
-        MackieControlComponent.__init__(self, main_script)
+        P1NanoTGEComponent.__init__(self, main_script)
         self.__left_extensions = []
         self.__right_extensions = []
         self.__displays = [display]
@@ -37,7 +37,7 @@ class MainDisplayController(MackieControlComponent):
 
     def destroy(self):
         self.enable_meters(False)
-        MackieControlComponent.destroy(self)
+        P1NanoTGEComponent.destroy(self)
 
     def set_controller_extensions(self, left_extensions, right_extensions):
         """

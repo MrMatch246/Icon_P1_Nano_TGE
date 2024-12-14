@@ -6,15 +6,15 @@ from itertools import chain
 
 from ableton.v2.base import liveobj_valid
 from builtins import range
-from .MackieControlComponent import *
+from .P1NanoTGEComponent import *
 import Live
 
-class ChannelStrip(MackieControlComponent):
+class ChannelStrip(P1NanoTGEComponent):
     # """ Represets a Channel Strip of the Mackie Control, which consists out of the """
 
 
     def __init__(self, main_script, strip_index):
-        MackieControlComponent.__init__(self, main_script)
+        P1NanoTGEComponent.__init__(self, main_script)
         self.__channel_strip_controller = None
         self.__is_touched = False
         self.__strip_index = strip_index
@@ -41,7 +41,7 @@ class ChannelStrip(MackieControlComponent):
         self.__meters_enabled = False
         self.__send_meter_mode()
         self.refresh_state()
-        MackieControlComponent.destroy(self)
+        P1NanoTGEComponent.destroy(self)
         self.__within_destroy = False
 
     def set_channel_strip_controller(self, channel_strip_controller):
@@ -378,16 +378,16 @@ class ChannelStrip(MackieControlComponent):
                            BUTTON_STATE_OFF))
 
 
-class MasterChannelStrip(MackieControlComponent):
+class MasterChannelStrip(P1NanoTGEComponent):
 
     def __init__(self, main_script):
-        MackieControlComponent.__init__(self, main_script)
+        P1NanoTGEComponent.__init__(self, main_script)
         self.__strip_index = MASTER_CHANNEL_STRIP_INDEX
         self.__assigned_track = self.song().master_track
 
     def destroy(self):
         self.reset_fader()
-        MackieControlComponent.destroy(self)
+        P1NanoTGEComponent.destroy(self)
 
     def set_channel_strip_controller(self, channel_strip_controller):
         pass

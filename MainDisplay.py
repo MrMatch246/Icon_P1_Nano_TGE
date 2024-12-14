@@ -2,13 +2,13 @@
 # Internal filename: ..\..\..\output\Live\win_64_static\Release\python-bundle\MIDI Remote Scripts\MackieControl\MainDisplay.py
 # Bytecode version: 3.11a7e (3495)
 # Source timestamp: 2024-09-26 15:27:47 UTC (1727364467)
-from .MackieControlComponent import *
+from .P1NanoTGEComponent import *
 
-class MainDisplay(MackieControlComponent):
+class MainDisplay(P1NanoTGEComponent):
     """ Representing one main 2 row display of a Mackie Control or Extension """
 
     def __init__(self, main_script):
-        MackieControlComponent.__init__(self, main_script)
+        P1NanoTGEComponent.__init__(self, main_script)
         self.__stack_offset = 0
         self.__last_send_messages = [[], []]
 
@@ -18,7 +18,7 @@ class MainDisplay(MackieControlComponent):
         self.send_display_string(upper_message, 0, 0)
         lower_message = 'Device is offline'.center(NUM_CHARS_PER_DISPLAY_LINE)
         self.send_display_string(lower_message, 1, 0)
-        MackieControlComponent.destroy(self)
+        P1NanoTGEComponent.destroy(self)
 
     def stack_offset(self):
         return self.__stack_offset

@@ -7,7 +7,7 @@ from itertools import chain
 
 
 from _Generic.Devices import *
-from .MackieControlComponent import *
+from .P1NanoTGEComponent import *
 
 flatten_target = lambda routing_target: routing_target.display_name
 
@@ -33,7 +33,7 @@ def target_by_name(target_list, name):
     return matches[0] if matches else None
 
 
-class ChannelStripController(MackieControlComponent):
+class ChannelStripController(P1NanoTGEComponent):
     """
        Controls all channel-strips of the Mackie Control and controller extensions
        (Mackie Control XTs) if available: Maps and controls the faders, VPots and the
@@ -71,7 +71,7 @@ class ChannelStripController(MackieControlComponent):
     """
 
     def __init__(self, main_script, channel_strips, master_strip, main_display_controller):
-        MackieControlComponent.__init__(self, main_script)
+        P1NanoTGEComponent.__init__(self, main_script)
         self.__left_extensions = []
         self.__right_extensions = []
         self.__own_channel_strips = channel_strips
@@ -134,7 +134,7 @@ class ChannelStripController(MackieControlComponent):
         self.send_midi((NOTE_ON_STATUS, SELECT_RUDE_SOLO, BUTTON_STATE_OFF))
         self.send_midi((CC_STATUS, 75, g7_seg_led_conv_table[' ']))
         self.send_midi((CC_STATUS, 74, g7_seg_led_conv_table[' ']))
-        MackieControlComponent.destroy(self)
+        P1NanoTGEComponent.destroy(self)
 
     def set_controller_extensions(self, left_extensions, right_extensions):
         u"""
@@ -175,7 +175,7 @@ class ChannelStripController(MackieControlComponent):
 
     def request_rebuild_midi_map(self):
         u""" Overridden to call also the extensions request_rebuild_midi_map """
-        MackieControlComponent.request_rebuild_midi_map(self)
+        P1NanoTGEComponent.request_rebuild_midi_map(self)
         for ex in self.__left_extensions + self.__right_extensions:
             ex.request_rebuild_midi_map()
 

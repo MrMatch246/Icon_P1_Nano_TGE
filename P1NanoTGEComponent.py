@@ -5,7 +5,7 @@
 from __future__ import absolute_import, print_function, unicode_literals
 from .consts import *
 
-class MackieControlComponent(object):
+class P1NanoTGEComponent(object):
     """ Baseclass for every 'sub component' of the Mackie Control. Just offers some """
 
     def __init__(self, main_script):
