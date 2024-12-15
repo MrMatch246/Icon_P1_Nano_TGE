@@ -311,6 +311,8 @@ class Transport(P1NanoTGEComponent):
                     self.__update_zoom_button_led()
         elif switch_id == SID_JOG_SCRUB:
             if value == BUTTON_PRESSED:
+                if self.arrangement_is_visible():
+                    self.song().view.selected_track.view.is_collapsed = not self.song().view.selected_track.view.is_collapsed
                 if self.session_is_visible():
                     if self.option_is_pressed():
                         self.song().stop_all_clips()
@@ -325,6 +327,7 @@ class Transport(P1NanoTGEComponent):
         if self.__zoom_button_down:
             self.application().view.zoom_view(nav.up, '', self.alt_is_pressed())
         else:
+            self.focus_visible_detail_view()
             self.application().view.scroll_view(nav.up, 'Arranger', self.alt_is_pressed())
 
     def __on_cursor_down_pressed(self):
@@ -332,7 +335,8 @@ class Transport(P1NanoTGEComponent):
         if self.__zoom_button_down:
             self.application().view.zoom_view(nav.down, '', self.alt_is_pressed())
         else:
-            self.application().view.scroll_view(nav.down, '', self.alt_is_pressed())
+            self.focus_visible_detail_view()
+            self.application().view.scroll_view(nav.down, 'Arranger', self.alt_is_pressed())
 
     def __on_cursor_left_pressed(self):
         nav = Live.Application.Application.View.NavDirection
