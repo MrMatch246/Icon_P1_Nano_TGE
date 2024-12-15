@@ -294,10 +294,6 @@ class Transport(P1NanoTGEComponent):
                     (NOTE_ON_STATUS, SID_JOG_CURSOR_RIGHT, BUTTON_STATE_OFF))
         elif switch_id == SID_JOG_ZOOM:
             if value == BUTTON_PRESSED:
-                if self.arrangement_is_visible():
-                    sys.stderr.write("Zooming in arrangement view\n")
-
-                    self.song().selected_track.view.is_collapsed = not self.song().selected_track.view.is_collapsed
                 if self.session_is_visible():
                     if self.selected_clip_slot():
                         if self.alt_is_pressed():
