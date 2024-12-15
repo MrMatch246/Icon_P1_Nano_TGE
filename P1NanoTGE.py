@@ -186,18 +186,6 @@ class P1NanoTGE(object):
             value = BUTTON_PRESSED if midi_bytes[2] > 0 else BUTTON_RELEASED
 
             if note in range(SID_FIRST, SID_LAST + 1):
-
-                if note == SID_JOG_CURSOR_UP:
-                    if value == BUTTON_PRESSED:
-                        self.send_midi((NOTE_ON_STATUS, SID_JOG_CURSOR_UP, BUTTON_STATE_ON))
-                    elif value == BUTTON_RELEASED:
-                        self.send_midi((NOTE_ON_STATUS, SID_JOG_CURSOR_UP, BUTTON_STATE_OFF))
-                elif note == SID_JOG_CURSOR_DOWN:
-                    if value == BUTTON_PRESSED:
-                        self.send_midi((NOTE_ON_STATUS, SID_JOG_CURSOR_DOWN, BUTTON_STATE_ON))
-                    elif value == BUTTON_RELEASED:
-                        self.send_midi((NOTE_ON_STATUS, SID_JOG_CURSOR_DOWN, BUTTON_STATE_OFF))
-
                 if note in display_switch_ids:
                     self.__handle_display_switch_ids(note, value)
                 if note in channel_strip_switch_ids + fader_touch_switch_ids:

@@ -187,7 +187,11 @@ class ChannelStripController(P1NanoTGEComponent):
     def handle_assignment_switch_ids(self, switch_id, value):
         if switch_id == SID_ASSIGNMENT_IO:
             if value == BUTTON_PRESSED:
-                self.__set_assignment_mode(CSM_IO)
+                #self.__set_assignment_mode(CSM_IO)
+                self.__set_assignment_mode(CSM_MULTI_TGE)
+
+
+
         elif switch_id == SID_ASSIGNMENT_SENDS:
             if value == BUTTON_PRESSED:
                 self.__set_assignment_mode(CSM_SENDS)
@@ -269,10 +273,11 @@ class ChannelStripController(P1NanoTGEComponent):
                 elif len(available_routings):
                     new_routing = available_routings[0]
                 self.__set_routing_target(channel_strip, new_routing)
-        else:
-            if self.__assignment_mode == CSM_PLUGINS:
-                return
-            channel_strip = self.__channel_strips[stack_offset + strip_index]
+        elif self.__assignment_mode == CSM_PLUGINS:
+            return
+        elif self.__assignment_mode == CSM_MULTI_TGE:
+            raise NotImplementedError
+        channel_strip = self.__channel_strips[stack_offset + strip_index]
 
     def handle_fader_touch(self, strip_offset, stack_offset, touched):
         """ Forwarded to us by the channel_strips """
@@ -302,6 +307,8 @@ class ChannelStripController(P1NanoTGEComponent):
                 self.__reorder_parameters()
                 self.__plugin_mode_offsets[PCM_PARAMETERS] = 0
                 self.__set_plugin_mode(PCM_PARAMETERS)
+        elif self.__assignment_mode == CSM_MULTI_TGE:
+            raise NotImplementedError
 
     def assignment_mode(self):
         return self.__assignment_mode
@@ -363,6 +370,8 @@ class ChannelStripController(P1NanoTGEComponent):
             return self.__plugin_mode_offsets[self.__plugin_mode] > 0
         elif self.__assignment_mode == CSM_SENDS:
             return self.__send_mode_offset > 0
+        elif self.__assignment_mode == CSM_MULTI_TGE:
+            raise NotImplementedError
         else:
             return False
 
@@ -376,11 +385,12 @@ class ChannelStripController(P1NanoTGEComponent):
                 parameters = self.__ordered_plugin_parameters
                 return self.__plugin_mode_offsets[PCM_PARAMETERS] + len(
                     self.__channel_strips) < len(parameters)
-        else:
-            if self.__assignment_mode == CSM_SENDS:
-                return self.__send_mode_offset + len(
-                    self.__channel_strips) < len(self.song().return_tracks)
-            return False
+        elif self.__assignment_mode == CSM_SENDS:
+            return self.__send_mode_offset + len(
+                self.__channel_strips) < len(self.song().return_tracks)
+        elif self.__assignment_mode == CSM_MULTI_TGE:
+            raise NotImplementedError
+        return False
 
     def __available_routing_targets(self, channel_strip):
         t = channel_strip.assigned_track()
@@ -445,11 +455,11 @@ class ChannelStripController(P1NanoTGEComponent):
         self.__update_channel_strip_strings()
         self.request_rebuild_midi_map()
 
+
     def __set_assignment_mode(self, mode):
         for plugin in self.__displayed_plugins:
             if plugin != None:
                 plugin.remove_name_listener(self.__update_plugin_names)
-
         self.__displayed_plugins = []
         if mode == CSM_PLUGINS:
             self.__assignment_mode = mode
@@ -458,16 +468,17 @@ class ChannelStripController(P1NanoTGEComponent):
         elif mode == CSM_SENDS:
             self.__main_display_controller.set_show_parameter_names(True)
             self.__assignment_mode = mode
-        else:
-            if mode == CSM_IO:
-                for s in self.__channel_strips:
-                    s.unlight_vpot_leds()
+        elif mode == CSM_IO:
+            for s in self.__channel_strips:
+                s.unlight_vpot_leds()
 
             self.__main_display_controller.set_show_parameter_names(False)
             if self.__assignment_mode != mode:
                 self.__assignment_mode = mode
             elif self.__assignment_mode == CSM_IO:
                 self.__switch_to_next_io_mode()
+        elif mode == CSM_MULTI_TGE:
+            self.__set__multi_tge_mode()
         self.__update_assignment_mode_leds()
         self.__update_assignment_display()
         self.__apply_meter_mode()
@@ -478,6 +489,10 @@ class ChannelStripController(P1NanoTGEComponent):
             self.__update_vpot_leds_in_plugins_device_choose_mode()
         self.__update_flip_led()
         self.request_rebuild_midi_map()
+    def __set__multi_tge_mode(self):
+        self.__assignment_mode = CSM_MULTI_TGE
+
+
 
     def __set_plugin_mode(self, new_mode):
         """
@@ -514,6 +529,8 @@ class ChannelStripController(P1NanoTGEComponent):
                     self.__update_vpot_leds_in_plugins_device_choose_mode()
             elif self.__assignment_mode == CSM_SENDS:
                 self.__send_mode_offset -= len(self.__channel_strips)
+            elif self.__assignment_mode == CSM_MULTI_TGE:
+                raise NotImplementedError
             self.__reassign_channel_strip_parameters(for_display_only=False)
             self.__update_channel_strip_strings()
             self.__update_page_switch_leds()
@@ -531,6 +548,8 @@ class ChannelStripController(P1NanoTGEComponent):
                     self.__update_vpot_leds_in_plugins_device_choose_mode()
             elif self.__assignment_mode == CSM_SENDS:
                 self.__send_mode_offset += len(self.__channel_strips)
+            elif self.__assignment_mode == CSM_MULTI_TGE:
+                raise NotImplementedError
             self.__reassign_channel_strip_parameters(for_display_only=False)
             self.__update_channel_strip_strings()
             self.__update_page_switch_leds()
@@ -579,6 +598,8 @@ class ChannelStripController(P1NanoTGEComponent):
             elif self.__assignment_mode == CSM_IO:
                 if s.assigned_track() and s.assigned_track().has_audio_output:
                     slider_param = (s.assigned_track().mixer_device.volume, u'Volume')
+            elif self.__assignment_mode == CSM_MULTI_TGE:
+                raise NotImplementedError
             if self.__flip and self.__can_flip():
                 if self.__any_fader_is_touched():
                     display_parameters.append(vpot_param)
@@ -628,7 +649,9 @@ class ChannelStripController(P1NanoTGEComponent):
 
     def __update_assignment_mode_leds(self):
         """ Show which assignment mode is currently active """
-        if self.__assignment_mode == CSM_IO:
+        #TGE Patch we remove IO and Add Multi Mode
+        #if self.__assignment_mode == CSM_IO:
+        if self.__assignment_mode == CSM_MULTI_TGE:
             sid_on_switch = SID_ASSIGNMENT_IO
         elif self.__assignment_mode == CSM_SENDS:
             sid_on_switch = SID_ASSIGNMENT_SENDS
@@ -647,8 +670,13 @@ class ChannelStripController(P1NanoTGEComponent):
 
     def __update_assignment_display(self):
         """
-            Cryptically label the current assignment mode in the 2char display above
-            the assignment buttons
+            Update the main display to show the current assignment mode
+            It works like this:
+            - In VolPan mode, show the track name of the first track
+            - In Send mode, show the send name of the first send
+            - In Plugin mode, show the device name of the first device
+            - In IO mode, show the routing target of the first track
+
         """
         ass_string = [' ', ' ']
         if self.__assignment_mode == CSM_VOLPAN:
@@ -677,6 +705,8 @@ class ChannelStripController(P1NanoTGEComponent):
                 ass_string = ['0', ',']
             else:
                 pass
+        elif self.__assignment_mode == CSM_MULTI_TGE:
+            raise NotImplementedError
         self.send_midi((CC_STATUS, 75, g7_seg_led_conv_table[ass_string[0]]))
         self.send_midi((CC_STATUS, 74, g7_seg_led_conv_table[ass_string[1]]))
 
@@ -733,7 +763,11 @@ class ChannelStripController(P1NanoTGEComponent):
     def __update_channel_strip_strings(self):
         """ In IO mode, collect all strings that will be visible in the main display manually """
         if not self.__any_fader_is_touched():
-            if self.__assignment_mode == CSM_IO:
+
+            if self.__assignment_mode == CSM_MULTI_TGE:
+                raise NotImplementedError
+
+            elif self.__assignment_mode == CSM_IO:
                 targets = []
                 for s in self.__channel_strips:
                     if self.__routing_target(s):
@@ -809,6 +843,9 @@ class ChannelStripController(P1NanoTGEComponent):
             self.__reassign_channel_strip_parameters(for_display_only=False)
             self.__update_assignment_display()
             self.request_rebuild_midi_map()
+        elif self.__assignment_mode == CSM_MULTI_TGE:
+            raise NotImplementedError
+        #TODO: Add bank and channel offset switching here
 
     def __on_flip_changed(self):
         """ Update the flip button LED when the flip mode changed """
@@ -893,3 +930,6 @@ class ChannelStripController(P1NanoTGEComponent):
         else:
             pass
         self.__ordered_plugin_parameters = result
+
+
+
