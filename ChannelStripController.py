@@ -468,17 +468,19 @@ class ChannelStripController(P1NanoTGEComponent):
         elif mode == CSM_SENDS:
             self.__main_display_controller.set_show_parameter_names(True)
             self.__assignment_mode = mode
-        elif mode == CSM_IO:
-            for s in self.__channel_strips:
-                s.unlight_vpot_leds()
+        elif mode == CSM_MULTI_TGE:
+            self.__set__multi_tge_mode()
+        else:
+            if mode == CSM_IO:
+                for s in self.__channel_strips:
+                    s.unlight_vpot_leds()
 
             self.__main_display_controller.set_show_parameter_names(False)
             if self.__assignment_mode != mode:
                 self.__assignment_mode = mode
             elif self.__assignment_mode == CSM_IO:
                 self.__switch_to_next_io_mode()
-        elif mode == CSM_MULTI_TGE:
-            self.__set__multi_tge_mode()
+
         self.__update_assignment_mode_leds()
         self.__update_assignment_display()
         self.__apply_meter_mode()
