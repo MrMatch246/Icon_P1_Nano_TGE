@@ -58,3 +58,9 @@ class P1NanoTGEComponent(object):
         elif show_if_hidden:
             self.application().view.show_view('Detail')
             self.application().view.focus_view(self.visible_detail_viw())
+
+    def number_of_sends(self):
+        return len(self.song().view.selected_track.mixer_device.sends)
+
+    def sends(self):
+        return self.song().view.selected_track.mixer_device.sends
