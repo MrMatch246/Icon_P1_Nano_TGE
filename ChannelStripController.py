@@ -883,8 +883,13 @@ class ChannelStripController(P1NanoTGEComponent):
             self.__update_assignment_display()
             self.request_rebuild_midi_map()
         elif self.__assignment_mode == CSM_MULTI_TGE:
-            raise NotImplementedError
-        #TODO: Add bank and channel offset switching here
+            self.__reassign_channel_strip_parameters(for_display_only=False)
+            self.__update_assignment_display()
+            self.request_rebuild_midi_map()
+            #TODO ADD THE REST, CURRENTLY ONLY SENDS WILL WORK?
+            # BUT IF THEY DO THEN THE REST SHOULD WORK TOO
+
+        #TODO: Add bank and channel offset switching here (Might be a deprecated TODO)
 
     def __on_flip_changed(self):
         """ Update the flip button LED when the flip mode changed """
