@@ -390,19 +390,31 @@ class ChannelStripController(P1NanoTGEComponent):
         return True
 
     def __can_switch_to_prev_page(self):
-        """ Return true if pressing the "next" button will have any effect """
+        """ Return true if pressing the "prev" button will have any effect """
         if self.__assignment_mode == CSM_PLUGINS:
             return self.__plugin_mode_offsets[self.__plugin_mode] > 0
         elif self.__assignment_mode == CSM_SENDS:
             return self.__send_mode_offset > 0
         elif self.__assignment_mode == CSM_MULTI_TGE:
-            raise NotImplementedError
+            #TODO TEST THIS
+            if len(self.plugin_strips_tge()) > 0:
+                return self.__plugin_mode_offsets[self.__plugin_mode] > 0
+            elif len(self.send_strips_tge()) > 0:
+                return self.__send_mode_offset > 0
         else:
             return False
 
     def __can_switch_to_next_page(self):
-        """ Return true if pressing the "prev" button will have any effect """
-        if self.__assignment_mode == CSM_PLUGINS:
+        """ Return true if pressing the "next" button will have any effect """
+        #TODO TEST THIS
+        do_plugins = False
+        do_sends = False
+        if self.__assignment_mode == CSM_MULTI_TGE:
+            do_plugins = len(self.plugin_strips_tge()) > 0
+            do_sends = len(self.send_strips_tge()) > 0
+
+
+        if self.__assignment_mode == CSM_PLUGINS or do_plugins:
             sel_track = self.song().view.selected_track
             if self.__plugin_mode == PCM_DEVICES:
                 return self.__plugin_mode_offsets[PCM_DEVICES] + len(self.__channel_strips) < len(sel_track.devices)
@@ -410,11 +422,9 @@ class ChannelStripController(P1NanoTGEComponent):
                 parameters = self.__ordered_plugin_parameters
                 return self.__plugin_mode_offsets[PCM_PARAMETERS] + len(
                     self.__channel_strips) < len(parameters)
-        elif self.__assignment_mode == CSM_SENDS:
+        elif self.__assignment_mode == CSM_SENDS or do_sends:
             return self.__send_mode_offset + len(
                 self.__channel_strips) < len(self.song().return_tracks)
-        elif self.__assignment_mode == CSM_MULTI_TGE:
-            raise NotImplementedError
         return False
 
     def __available_routing_targets(self, channel_strip):
@@ -494,7 +504,9 @@ class ChannelStripController(P1NanoTGEComponent):
             self.__main_display_controller.set_show_parameter_names(True)
             self.__assignment_mode = mode
         elif mode == CSM_MULTI_TGE:
-            self.__set__multi_tge_mode()
+            #TODO TEST THIS
+            self.__main_display_controller.set_show_parameter_names(True)
+            self.__assignment_mode = mode
         else:
             if mode == CSM_IO:
                 for s in self.__channel_strips:
@@ -512,13 +524,12 @@ class ChannelStripController(P1NanoTGEComponent):
         self.__reassign_channel_strip_parameters(for_display_only=False)
         self.__update_channel_strip_strings()
         self.__update_page_switch_leds()
-        if mode == CSM_PLUGINS:
+
+        #TODO TEST THIS
+        if mode == CSM_PLUGINS or mode == CSM_MULTI_TGE:
             self.__update_vpot_leds_in_plugins_device_choose_mode()
         self.__update_flip_led()
         self.request_rebuild_midi_map()
-    def __set__multi_tge_mode(self):
-        self.__assignment_mode = CSM_MULTI_TGE
-
 
 
     def __set_plugin_mode(self, new_mode):
@@ -544,20 +555,26 @@ class ChannelStripController(P1NanoTGEComponent):
             self.__update_flip_led()
             self.__update_page_switch_leds()
 
+
     def __switch_to_prev_page(self):
         """
             Switch to the previous page in the non track strip modes (choosing plugs, or
             controlling devices)
         """
         if self.__can_switch_to_prev_page():
-            if self.__assignment_mode == CSM_PLUGINS:
+            do_plugins = False
+            do_sends = False
+            if self.__assignment_mode == CSM_MULTI_TGE:
+                do_plugins = len(self.plugin_strips_tge()) > 0
+                do_sends = len(self.send_strips_tge()) > 0
+
+
+            if self.__assignment_mode == CSM_PLUGINS or do_plugins:
                 self.__plugin_mode_offsets[self.__plugin_mode] -= len(self.__channel_strips)
                 if self.__plugin_mode == PCM_DEVICES:
                     self.__update_vpot_leds_in_plugins_device_choose_mode()
-            elif self.__assignment_mode == CSM_SENDS:
+            elif self.__assignment_mode == CSM_SENDS or do_sends:
                 self.__send_mode_offset -= len(self.__channel_strips)
-            elif self.__assignment_mode == CSM_MULTI_TGE:
-                raise NotImplementedError
             self.__reassign_channel_strip_parameters(for_display_only=False)
             self.__update_channel_strip_strings()
             self.__update_page_switch_leds()
@@ -569,14 +586,19 @@ class ChannelStripController(P1NanoTGEComponent):
             controlling devices)
         """
         if self.__can_switch_to_next_page():
-            if self.__assignment_mode == CSM_PLUGINS:
+            do_plugins = False
+            do_sends = False
+            if self.__assignment_mode == CSM_MULTI_TGE:
+                do_plugins = len(self.plugin_strips_tge()) > 0
+                do_sends = len(self.send_strips_tge()) > 0
+
+
+            if self.__assignment_mode == CSM_PLUGINS or do_plugins:
                 self.__plugin_mode_offsets[self.__plugin_mode] += len(self.__channel_strips)
                 if self.__plugin_mode == PCM_DEVICES:
                     self.__update_vpot_leds_in_plugins_device_choose_mode()
-            elif self.__assignment_mode == CSM_SENDS:
+            elif self.__assignment_mode == CSM_SENDS or do_sends:
                 self.__send_mode_offset += len(self.__channel_strips)
-            elif self.__assignment_mode == CSM_MULTI_TGE:
-                raise NotImplementedError
             self.__reassign_channel_strip_parameters(for_display_only=False)
             self.__update_channel_strip_strings()
             self.__update_page_switch_leds()
@@ -595,6 +617,19 @@ class ChannelStripController(P1NanoTGEComponent):
             s.set_bank_and_channel_offset(self.__strip_offset(),
                                           self.__view_returns,
                                           self.__within_track_added_or_deleted)
+    def pan_strip_tge(self):
+        return self.__channel_strips[0]
+
+    def send_strips_tge(self):
+        #TODO CHECK OFFSETS HERE, MAYBE NEED TO ADD or SUBSTRACT 1
+        return self.__channel_strips[1:min(NUM_CHANNEL_STRIPS, self.number_of_sends()+1)]
+
+    def plugin_strips_tge(self):
+        #TODO CHECK OFFSETS HERE, MAYBE NEED TO ADD or SUBSTRACT 1
+        if self.number_of_sends() + 1 < NUM_CHANNEL_STRIPS:
+            return self.__channel_strips[self.number_of_sends()+1:NUM_CHANNEL_STRIPS]
+        else:
+            return []
 
     def __reassign_channel_strip_parameters(self, for_display_only):
         """ Reevaluate all v-pot/fader -> parameter assignments """
@@ -609,12 +644,10 @@ class ChannelStripController(P1NanoTGEComponent):
             do_plugins = False
             do_sends = False
             if self.__assignment_mode == CSM_MULTI_TGE:
-                if index == 0:
-                    do_volpan = True
-                elif index in range(1, self.number_of_sends()+1):
-                    do_sends = True
-                elif index in range(self.number_of_sends()+1,NUM_CHANNEL_STRIPS + 1):
-                    do_plugins = True
+                do_volpan = index == 0
+                do_sends = index in range(1, self.number_of_sends()+1)
+                do_plugins =  index in range(self.number_of_sends()+1,NUM_CHANNEL_STRIPS + 1)
+
 
             if do_volpan or self.__assignment_mode == CSM_VOLPAN:
                 if s.assigned_track() and s.assigned_track().has_audio_output:
@@ -660,10 +693,20 @@ class ChannelStripController(P1NanoTGEComponent):
             self.__update_vpot_leds_in_plugins_device_choose_mode()
 
     def _need_to_update_meter(self, meter_state_changed):
-        return meter_state_changed and self.__assignment_mode == CSM_VOLPAN
+        #TODO TEST THIS
+        return meter_state_changed and (self.__assignment_mode == CSM_VOLPAN or self.__assignment_mode == CSM_MULTI_TGE)
 
     def __apply_meter_mode(self, meter_state_changed = False):
         """ Update the meter mode in the displays and channel strips """
+        if self.__assignment_mode == CSM_MULTI_TGE:
+            #TODO TEST THIS !!!!
+            for index, s in enumerate(self.__channel_strips):
+                if index == 0:
+                    s.enable_meter_mode(True, needs_to_send_meter_mode=self._need_to_update_meter(meter_state_changed))
+                else:
+                    s.enable_meter_mode(False, needs_to_send_meter_mode=self._need_to_update_meter(meter_state_changed))
+
+
         enabled = self.__meters_enabled and self.__assignment_mode is CSM_VOLPAN
         send_meter_mode = self._last_assignment_mode != self.__assignment_mode or self._need_to_update_meter(
             meter_state_changed)
@@ -866,7 +909,16 @@ class ChannelStripController(P1NanoTGEComponent):
         st = self.__last_attached_selected_track
         if st:
             st.add_devices_listener(self.__on_selected_device_chain_changed)
-        if self.__assignment_mode == CSM_PLUGINS:
+
+        #TODO TEST THIS
+        if self.__assignment_mode == CSM_MULTI_TGE:
+            do_plugin = len(self.plugin_strips_tge()) > 0
+            do_sends = len(self.send_strips_tge()) > 0
+        else:
+            do_plugin = self.__assignment_mode == CSM_PLUGINS
+            do_sends = self.__assignment_mode == CSM_SENDS
+
+        if do_plugin:
             self.__plugin_mode_offsets = [0 for x in range(PCM_NUMMODES)]
             if self.__chosen_plugin != None:
                 self.__chosen_plugin.remove_parameters_listener(
@@ -878,18 +930,10 @@ class ChannelStripController(P1NanoTGEComponent):
                 self.__update_vpot_leds_in_plugins_device_choose_mode()
             else:
                 self.__set_plugin_mode(PCM_DEVICES)
-        elif self.__assignment_mode == CSM_SENDS:
+        if do_sends:
             self.__reassign_channel_strip_parameters(for_display_only=False)
             self.__update_assignment_display()
             self.request_rebuild_midi_map()
-        elif self.__assignment_mode == CSM_MULTI_TGE:
-            self.__reassign_channel_strip_parameters(for_display_only=False)
-            self.__update_assignment_display()
-            self.request_rebuild_midi_map()
-            #TODO ADD THE REST, CURRENTLY ONLY SENDS WILL WORK?
-            # BUT IF THEY DO THEN THE REST SHOULD WORK TOO
-
-        #TODO: Add bank and channel offset switching here (Might be a deprecated TODO)
 
     def __on_flip_changed(self):
         """ Update the flip button LED when the flip mode changed """
@@ -900,7 +944,9 @@ class ChannelStripController(P1NanoTGEComponent):
             self.request_rebuild_midi_map()
 
     def __on_selected_device_chain_changed(self):
-        if self.__assignment_mode == CSM_PLUGINS:
+        """ Notifier, called as soon as the selected device chain has changed """
+        #TODO TEST THIS
+        if self.__assignment_mode == CSM_PLUGINS or self.__assignment_mode == CSM_MULTI_TGE:
             if self.__plugin_mode == PCM_DEVICES:
                 self.__update_vpot_leds_in_plugins_device_choose_mode()
                 self.__update_page_switch_leds()
@@ -935,8 +981,11 @@ class ChannelStripController(P1NanoTGEComponent):
                                               self.__channel_strips)))
         self.__reassign_channel_strip_parameters(for_display_only=False)
         self.__update_channel_strip_strings()
+
+        #TODO ADD PAGING FOR MULTI TGE HERE??
         if self.__assignment_mode == CSM_SENDS:
             self.__update_page_switch_leds()
+
         self.refresh_state()
         self.__main_display_controller.refresh_state()
         self.__within_track_added_or_deleted = False
