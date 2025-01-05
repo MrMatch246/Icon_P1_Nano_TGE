@@ -106,6 +106,15 @@ class MainDisplayController(P1NanoTGEComponent):
                 track_index_range = list(
                     range(self.__bank_channel_offset + display.stack_offset(),
                           self.__bank_channel_offset + display.stack_offset() + NUM_CHANNEL_STRIPS))
+                if not self.__show_return_tracks:
+                    for i,track in enumerate(self.song().visible_tracks):
+                        if track == self.song().view.selected_track:
+                            selected_track_index = i
+                            track_index_range = list(
+                                range(selected_track_index,
+                                        selected_track_index + NUM_CHANNEL_STRIPS))
+                            break
+
                 if self.__show_return_tracks:
                     tracks = self.song().return_tracks
                 else:

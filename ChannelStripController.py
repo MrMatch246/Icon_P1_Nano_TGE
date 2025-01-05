@@ -910,6 +910,14 @@ class ChannelStripController(P1NanoTGEComponent):
         if st:
             st.add_devices_listener(self.__on_selected_device_chain_changed)
 
+        if not self.__view_returns:
+            for i, track in enumerate(self.song().visible_tracks):
+                if track == self.song().view.selected_track:
+                    self.__set_channel_offset(i)
+                    #sys.stderr.write(f"Setting channel offset to {i} for track {track.name}\n")
+                    break
+
+
         #TODO TEST THIS
         if self.__assignment_mode == CSM_MULTI_TGE:
             do_plugin = len(self.plugin_strips_tge()) > 0

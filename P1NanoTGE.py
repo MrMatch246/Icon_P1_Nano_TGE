@@ -67,6 +67,10 @@ class P1NanoTGE(object):
     def disconnect(self):
         for c in self.__components:
             c.destroy()
+        sys.stderr.write('P1NanoTGE script unloaded')
+
+    def __del__(self):
+        self.disconnect()
 
     def connect_script_instances(self, instanciated_scripts):
         """
