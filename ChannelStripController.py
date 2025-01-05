@@ -4,6 +4,7 @@ from itertools import chain
 
 from _Generic.Devices import *
 from .P1NanoTGEComponent import *
+from ableton.v3.live import track_index
 
 flatten_target = lambda routing_target: routing_target.display_name
 
@@ -301,7 +302,7 @@ class ChannelStripController(P1NanoTGEComponent):
                 self.handle_pressed_v_pot_reset_value(stack_offset, strip_index)
             elif strip_index in range(self.number_of_sends()+1,NUM_CHANNEL_STRIPS + 1):
                 if self.__plugin_mode == PCM_DEVICES:
-                    self.handle_pressed_v_pot_plugin_device(stack_offset, strip_index)
+                    self.handle_pressed_v_pot_plugin_device(stack_offset, strip_index-self.number_of_sends()-1)
                 elif self.__plugin_mode == PCM_PARAMETERS:
                     self.handle_pressed_v_pot_reset_value(stack_offset, strip_index)
 
@@ -319,6 +320,7 @@ class ChannelStripController(P1NanoTGEComponent):
                 param.value = param.default_value
 
     def handle_pressed_v_pot_plugin_device(self, stack_offset, strip_index):
+        #sys.stderr.write(f"handle_pressed_v_pot_plugin_device: {stack_offset}, {strip_index}\n")
         device_index = strip_index + stack_offset + self.__plugin_mode_offsets[
             PCM_DEVICES]
         if device_index >= 0 and device_index < len(
@@ -507,6 +509,7 @@ class ChannelStripController(P1NanoTGEComponent):
             #TODO TEST THIS
             self.__main_display_controller.set_show_parameter_names(True)
             self.__assignment_mode = mode
+            self.__set_plugin_mode(PCM_DEVICES)
         else:
             if mode == CSM_IO:
                 for s in self.__channel_strips:
@@ -634,7 +637,9 @@ class ChannelStripController(P1NanoTGEComponent):
     def __reassign_channel_strip_parameters(self, for_display_only):
         """ Reevaluate all v-pot/fader -> parameter assignments """
         display_parameters = []
-        for index,s in enumerate(self.__channel_strips):
+        current_strip = self.__channel_strips[0]
+        current_track = current_strip.assigned_track()
+        for index, s in enumerate(self.__channel_strips):
             vpot_param = (None, None)
             slider_param = (None, None)
             vpot_display_mode = VPOT_DISPLAY_SINGLE_DOT
@@ -643,33 +648,58 @@ class ChannelStripController(P1NanoTGEComponent):
             do_volpan= False
             do_plugins = False
             do_sends = False
+
             if self.__assignment_mode == CSM_MULTI_TGE:
+
                 do_volpan = index == 0
                 do_sends = index in range(1, self.number_of_sends()+1)
                 do_plugins =  index in range(self.number_of_sends()+1,NUM_CHANNEL_STRIPS + 1)
+                #sys.stderr.write("do_volpan: " + str(do_volpan) + " do_sends: " + str(do_sends) + " do_plugins: " + str(do_plugins) )
+                if do_volpan:
+                    if current_track and current_track.has_audio_output:
+                        vpot_param = (s.assigned_track().mixer_device.panning, u'Pan')
+                        vpot_display_mode = VPOT_DISPLAY_BOOST_CUT
+                        slider_param = (s.assigned_track().mixer_device.volume, u'Volume')
+                        slider_display_mode = VPOT_DISPLAY_WRAP
 
+                elif do_plugins:
+                    vpot_param = self.__plugin_parameter(index-self.number_of_sends()-1, current_strip.stack_offset())
+                    vpot_display_mode = VPOT_DISPLAY_WRAP
+                    if current_track and current_track.has_audio_output:
+                        slider_param = (s.assigned_track().mixer_device.volume, u'Volume')
+                        slider_display_mode = VPOT_DISPLAY_WRAP
 
-            if do_volpan or self.__assignment_mode == CSM_VOLPAN:
-                if s.assigned_track() and s.assigned_track().has_audio_output:
-                    vpot_param = (s.assigned_track().mixer_device.panning, u'Pan')
-                    vpot_display_mode = VPOT_DISPLAY_BOOST_CUT
-                    slider_param = (s.assigned_track().mixer_device.volume, u'Volume')
-                    slider_display_mode = VPOT_DISPLAY_WRAP
-            elif do_plugins or self.__assignment_mode == CSM_PLUGINS:
-                vpot_param = self.__plugin_parameter(s.strip_index(), s.stack_offset())
-                vpot_display_mode = VPOT_DISPLAY_WRAP
-                if s.assigned_track() and s.assigned_track().has_audio_output:
-                    slider_param = (s.assigned_track().mixer_device.volume, u'Volume')
-                    slider_display_mode = VPOT_DISPLAY_WRAP
-            elif do_sends or self.__assignment_mode == CSM_SENDS:
-                vpot_param = self.__send_parameter(s.strip_index(), s.stack_offset())
-                vpot_display_mode = VPOT_DISPLAY_WRAP
-                if s.assigned_track() and s.assigned_track().has_audio_output:
-                    slider_param = (s.assigned_track().mixer_device.volume, u'Volume')
-                    slider_display_mode = VPOT_DISPLAY_WRAP
-            elif self.__assignment_mode == CSM_IO:
-                if s.assigned_track() and s.assigned_track().has_audio_output:
-                    slider_param = (s.assigned_track().mixer_device.volume, u'Volume')
+                elif do_sends:
+                    vpot_param = self.__send_parameter(index-1, current_strip.stack_offset())
+                    vpot_display_mode = VPOT_DISPLAY_WRAP
+                    if current_track and current_track.has_audio_output:
+                        slider_param = (s.assigned_track().mixer_device.volume, u'Volume')
+                        slider_display_mode = VPOT_DISPLAY_WRAP
+            else:
+                if do_volpan or self.__assignment_mode == CSM_VOLPAN:
+                    if s.assigned_track() and s.assigned_track().has_audio_output:
+                        vpot_param = (s.assigned_track().mixer_device.panning, u'Pan')
+                        vpot_display_mode = VPOT_DISPLAY_BOOST_CUT
+                        slider_param = (s.assigned_track().mixer_device.volume, u'Volume')
+                        slider_display_mode = VPOT_DISPLAY_WRAP
+
+                elif do_plugins or self.__assignment_mode == CSM_PLUGINS:
+                    vpot_param = self.__plugin_parameter(s.strip_index(), s.stack_offset())
+                    vpot_display_mode = VPOT_DISPLAY_WRAP
+                    if s.assigned_track() and s.assigned_track().has_audio_output:
+                        slider_param = (s.assigned_track().mixer_device.volume, u'Volume')
+                        slider_display_mode = VPOT_DISPLAY_WRAP
+
+                elif do_sends or self.__assignment_mode == CSM_SENDS:
+                    vpot_param = self.__send_parameter(s.strip_index(), s.stack_offset())
+                    vpot_display_mode = VPOT_DISPLAY_WRAP
+                    if s.assigned_track() and s.assigned_track().has_audio_output:
+                        slider_param = (s.assigned_track().mixer_device.volume, u'Volume')
+                        slider_display_mode = VPOT_DISPLAY_WRAP
+
+                elif self.__assignment_mode == CSM_IO:
+                    if s.assigned_track() and s.assigned_track().has_audio_output:
+                        slider_param = (s.assigned_track().mixer_device.volume, u'Volume')
             if self.__flip and self.__can_flip():
                 if self.__any_fader_is_touched():
                     display_parameters.append(vpot_param)
@@ -689,7 +719,7 @@ class ChannelStripController(P1NanoTGEComponent):
         self.__main_display_controller.set_channel_offset(self.__strip_offset())
         if len(display_parameters):
             self.__main_display_controller.set_parameters(display_parameters)
-        if self.__assignment_mode == CSM_PLUGINS and self.__plugin_mode == PCM_DEVICES:
+        if (self.__assignment_mode == CSM_PLUGINS or self.__assignment_mode == CSM_MULTI_TGE) and self.__plugin_mode == PCM_DEVICES:
             self.__update_vpot_leds_in_plugins_device_choose_mode()
 
     def _need_to_update_meter(self, meter_state_changed):
@@ -786,7 +816,8 @@ class ChannelStripController(P1NanoTGEComponent):
             else:
                 pass
         elif self.__assignment_mode == CSM_MULTI_TGE:
-            raise NotImplementedError
+            #TODO TGE: Implement this correctly once external display arrives
+            ass_string = ['T','G']
         self.send_midi((CC_STATUS, 75, g7_seg_led_conv_table[ass_string[0]]))
         self.send_midi((CC_STATUS, 74, g7_seg_led_conv_table[ass_string[1]]))
 
@@ -846,7 +877,8 @@ class ChannelStripController(P1NanoTGEComponent):
 
             if self.__assignment_mode == CSM_MULTI_TGE:
                 #TODO Replace Placeholder with actual strings
-                chan_strings = "MultiTGE".split()
+                chan_strings = list("MultiTGE")
+
                 self.__main_display_controller.set_channel_strip_strings(chan_strings)
 
             elif self.__assignment_mode == CSM_IO:
