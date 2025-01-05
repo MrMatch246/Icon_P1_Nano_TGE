@@ -260,7 +260,10 @@ class ChannelStrip(P1NanoTGEComponent):
             self.__assigned_track.add_input_routing_type_listener(
                 self.__update_arm_led)
             if self.__assigned_track.can_be_armed:
-                self.__assigned_track.add_arm_listener(self.__update_arm_led)
+                try:
+                    self.__assigned_track.add_arm_listener(self.__update_arm_led)
+                except:
+                    pass
         self.__assigned_track.add_mute_listener(self.__update_mute_led)
         self.__assigned_track.add_solo_listener(self.__update_solo_led)
         if not self.song().view.selected_track_has_listener(

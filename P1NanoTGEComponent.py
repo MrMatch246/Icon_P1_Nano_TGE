@@ -40,7 +40,7 @@ class P1NanoTGEComponent(object):
     def request_rebuild_midi_map(self):
         self.__main_script.request_rebuild_midi_map()
 
-    def visible_detail_viw(self):
+    def visible_detail_view(self):
         if self.application().view.is_view_visible('Detail/DeviceChain'):
             return "Detail/DeviceChain"
         elif self.application().view.is_view_visible('Detail/Clip'):
@@ -54,10 +54,10 @@ class P1NanoTGEComponent(object):
 
     def focus_visible_detail_view(self,show_if_hidden=False):
         if self.application().view.is_view_visible('Detail'):
-            self.application().view.focus_view(self.visible_detail_viw())
+            self.application().view.focus_view(self.visible_detail_view())
         elif show_if_hidden:
             self.application().view.show_view('Detail')
-            self.application().view.focus_view(self.visible_detail_viw())
+            self.application().view.focus_view(self.visible_detail_view())
 
     def number_of_sends(self):
         return len(self.song().view.selected_track.mixer_device.sends)
