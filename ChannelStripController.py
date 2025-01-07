@@ -188,8 +188,8 @@ class ChannelStripController(P1NanoTGEComponent):
     def handle_assignment_switch_ids(self, switch_id, value):
         if switch_id == SID_ASSIGNMENT_IO:
             if value == BUTTON_PRESSED:
-                #self.__set_assignment_mode(CSM_IO)
-                self.__set_assignment_mode(CSM_MULTI_TGE)
+                self.__set_assignment_mode(CSM_IO)
+                #self.__set_assignment_mode(CSM_MULTI_TGE)
 
 
 
@@ -494,6 +494,8 @@ class ChannelStripController(P1NanoTGEComponent):
         self.__update_channel_strip_strings()
         self.request_rebuild_midi_map()
 
+    def set_assignment_mode(self, mode):
+        self.__set_assignment_mode(mode)
 
     def __set_assignment_mode(self, mode):
         for plugin in self.__displayed_plugins:
@@ -767,9 +769,11 @@ class ChannelStripController(P1NanoTGEComponent):
     def __update_assignment_mode_leds(self):
         """ Show which assignment mode is currently active """
         #TGE Patch we remove IO and Add Multi Mode
-        #if self.__assignment_mode == CSM_IO:
-        if self.__assignment_mode == CSM_MULTI_TGE:
+        if self.__assignment_mode == CSM_IO:
             sid_on_switch = SID_ASSIGNMENT_IO
+        elif self.__assignment_mode == CSM_MULTI_TGE:
+            sid_on_switch = SID_SOFTWARE_F1
+            #sid_on_switch = SID_ASSIGNMENT_IO
         elif self.__assignment_mode == CSM_SENDS:
             sid_on_switch = SID_ASSIGNMENT_SENDS
         elif self.__assignment_mode == CSM_VOLPAN:
@@ -778,7 +782,7 @@ class ChannelStripController(P1NanoTGEComponent):
             sid_on_switch = SID_ASSIGNMENT_PLUG_INS
         else:
             sid_on_switch = None
-        assignment_switch_ids = [SID_ASSIGNMENT_IO, SID_ASSIGNMENT_SENDS, SID_ASSIGNMENT_PAN, SID_ASSIGNMENT_PLUG_INS]
+        assignment_switch_ids = [SID_ASSIGNMENT_IO, SID_ASSIGNMENT_SENDS, SID_ASSIGNMENT_PAN, SID_ASSIGNMENT_PLUG_INS,SID_SOFTWARE_F1]
         assignment_switch_ids.remove(sid_on_switch)
         for s in assignment_switch_ids:
             self.send_midi((NOTE_ON_STATUS, s, BUTTON_STATE_OFF))

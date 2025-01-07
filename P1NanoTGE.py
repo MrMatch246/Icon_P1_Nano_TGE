@@ -284,8 +284,7 @@ class P1NanoTGE(object):
     def handle_function_key_switch_ids(self, switch_id, value):
             if value == BUTTON_PRESSED:
                 if switch_id == SID_SOFTWARE_F1:
-                    sys.stderr.write('F1 pressed')
-                    self.__main_display.send_display_color(0, 0, 0)
+                    self.__channel_strip_controller.set_assignment_mode(CSM_MULTI_TGE)
                 elif switch_id == SID_SOFTWARE_F2:
                     pass
                 else:
