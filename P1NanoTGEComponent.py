@@ -65,7 +65,7 @@ class P1NanoTGEComponent(object):
     def tge_sends_slots(self):
         return min(NUM_CHANNEL_STRIPS - 1, self.total_number_of_sends())
 
-    def tge_plugin_slots(self):
+    def tge_plugins_slots(self):
         return NUM_CHANNEL_STRIPS - 1 - self.tge_sends_slots()
 
     def tge_sends_indices(self):

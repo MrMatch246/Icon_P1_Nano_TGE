@@ -399,9 +399,9 @@ class ChannelStripController(P1NanoTGEComponent):
             return self.__send_mode_offset > 0
         elif self.__assignment_mode == CSM_MULTI_TGE:
             #TODO TEST THIS
-            if len(self.plugin_strips_tge()) > 0:
+            if self.tge_plugins_slots() > 0:
                 return self.__plugin_mode_offsets[self.__plugin_mode] > 0
-            elif len(self.send_strips_tge()) > 0:
+            elif self.tge_sends_slots() > 0:
                 return self.__send_mode_offset > 0
         else:
             return False
@@ -411,22 +411,24 @@ class ChannelStripController(P1NanoTGEComponent):
         #TODO TEST THIS
         do_plugins = False
         do_sends = False
+        plugin_page_size = len(self.__channel_strips)
+        send_page_size = len(self.__channel_strips)
         if self.__assignment_mode == CSM_MULTI_TGE:
-            do_plugins = len(self.plugin_strips_tge()) > 0
-            do_sends = len(self.send_strips_tge()) > 0
+            do_plugins = self.tge_plugins_slots() > 0
+            do_sends = self.tge_sends_slots() > 0
+            plugin_page_size = self.tge_plugins_slots()
+            send_page_size = self.tge_sends_slots()
 
 
         if self.__assignment_mode == CSM_PLUGINS or do_plugins:
             sel_track = self.song().view.selected_track
             if self.__plugin_mode == PCM_DEVICES:
-                return self.__plugin_mode_offsets[PCM_DEVICES] + len(self.__channel_strips) < len(sel_track.devices)
+                return self.__plugin_mode_offsets[PCM_DEVICES] + plugin_page_size < len(sel_track.devices)
             if self.__plugin_mode == PCM_PARAMETERS:
                 parameters = self.__ordered_plugin_parameters
-                return self.__plugin_mode_offsets[PCM_PARAMETERS] + len(
-                    self.__channel_strips) < len(parameters)
+                return self.__plugin_mode_offsets[PCM_PARAMETERS] + plugin_page_size < len(parameters)
         elif self.__assignment_mode == CSM_SENDS or do_sends:
-            return self.__send_mode_offset + len(
-                self.__channel_strips) < len(self.song().return_tracks)
+            return self.__send_mode_offset + send_page_size < len(self.song().return_tracks)
         return False
 
     def __available_routing_targets(self, channel_strip):
@@ -567,17 +569,20 @@ class ChannelStripController(P1NanoTGEComponent):
         if self.__can_switch_to_prev_page():
             do_plugins = False
             do_sends = False
+            plugin_page_size = len(self.__channel_strips)
+            send_page_size = len(self.__channel_strips)
             if self.__assignment_mode == CSM_MULTI_TGE:
                 do_plugins = len(self.plugin_strips_tge()) > 0
                 do_sends = len(self.send_strips_tge()) > 0
-
+                plugin_page_size = self.tge_plugins_slots()
+                send_page_size = self.tge_sends_slots()
 
             if self.__assignment_mode == CSM_PLUGINS or do_plugins:
-                self.__plugin_mode_offsets[self.__plugin_mode] -= len(self.__channel_strips)
+                self.__plugin_mode_offsets[self.__plugin_mode] -= plugin_page_size
                 if self.__plugin_mode == PCM_DEVICES:
                     self.__update_vpot_leds_in_plugins_device_choose_mode()
             elif self.__assignment_mode == CSM_SENDS or do_sends:
-                self.__send_mode_offset -= len(self.__channel_strips)
+                self.__send_mode_offset -= send_page_size
             self.__reassign_channel_strip_parameters(for_display_only=False)
             self.__update_channel_strip_strings()
             self.__update_page_switch_leds()
@@ -591,17 +596,21 @@ class ChannelStripController(P1NanoTGEComponent):
         if self.__can_switch_to_next_page():
             do_plugins = False
             do_sends = False
+            plugin_page_size = len(self.__channel_strips)
+            send_page_size = len(self.__channel_strips)
             if self.__assignment_mode == CSM_MULTI_TGE:
-                do_plugins = len(self.plugin_strips_tge()) > 0
-                do_sends = len(self.send_strips_tge()) > 0
+                do_plugins = self.tge_plugins_slots() > 0
+                do_sends = self.tge_sends_slots() > 0
+                plugin_page_size = self.tge_plugins_slots()
+                send_page_size = self.tge_sends_slots()
 
 
             if self.__assignment_mode == CSM_PLUGINS or do_plugins:
-                self.__plugin_mode_offsets[self.__plugin_mode] += len(self.__channel_strips)
+                self.__plugin_mode_offsets[self.__plugin_mode] += plugin_page_size
                 if self.__plugin_mode == PCM_DEVICES:
                     self.__update_vpot_leds_in_plugins_device_choose_mode()
             elif self.__assignment_mode == CSM_SENDS or do_sends:
-                self.__send_mode_offset += len(self.__channel_strips)
+                self.__send_mode_offset += send_page_size
             self.__reassign_channel_strip_parameters(for_display_only=False)
             self.__update_channel_strip_strings()
             self.__update_page_switch_leds()
@@ -879,7 +888,7 @@ class ChannelStripController(P1NanoTGEComponent):
                         plugin.remove_name_listener(self.__update_plugin_names)
                 self.__displayed_plugins = []
                 sel_track = self.song().view.selected_track
-                plugin_start = self.total_number_of_sends() + 1
+                plugin_start = self.total_number_of_sends() + 1 #+ self.__plugin_mode_offsets[PCM_DEVICES]
                 for i in range(len(self.__channel_strips)):
                     display_index = i + self.__plugin_mode_offsets[PCM_DEVICES]
                     device_index = display_index - plugin_start
@@ -969,7 +978,7 @@ class ChannelStripController(P1NanoTGEComponent):
 
         #TODO TEST THIS
         if self.__assignment_mode == CSM_MULTI_TGE:
-            do_plugin = self.tge_plugin_slots() > 0
+            do_plugin = self.tge_plugins_slots() > 0
             do_sends = self.tge_sends_slots() > 0
         else:
             do_plugin = self.__assignment_mode == CSM_PLUGINS
