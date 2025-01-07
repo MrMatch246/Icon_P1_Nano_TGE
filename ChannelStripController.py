@@ -500,6 +500,7 @@ class ChannelStripController(P1NanoTGEComponent):
             if plugin != None:
                 plugin.remove_name_listener(self.__update_plugin_names)
         self.__displayed_plugins = []
+        self.__main_display_controller.set_show_current_track_colors(False)
         if mode == CSM_PLUGINS:
             self.__assignment_mode = mode
             self.__main_display_controller.set_show_parameter_names(True)
@@ -510,6 +511,7 @@ class ChannelStripController(P1NanoTGEComponent):
         elif mode == CSM_MULTI_TGE:
             #TODO TEST THIS
             self.__main_display_controller.set_show_parameter_names(True)
+            self.__main_display_controller.set_show_current_track_colors(True)
             self.__assignment_mode = mode
             self.__set_plugin_mode(PCM_DEVICES)
         else:

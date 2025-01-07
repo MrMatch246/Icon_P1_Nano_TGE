@@ -48,8 +48,7 @@ class SoftwareController(P1NanoTGEComponent):
             self.send_midi((NOTE_ON_STATUS, note, BUTTON_STATE_OFF))
         P1NanoTGEComponent.destroy(self)
 
-    def handle_function_key_switch_ids(self, switch_id, value):
-        return
+
 
     def handle_software_controls_switch_ids(self, switch_id, value):
         if switch_id == SID_MOD_SHIFT:

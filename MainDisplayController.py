@@ -1,7 +1,7 @@
 import sys
 
 from .P1NanoTGEComponent import *
-
+from ableton.v3.live import liveobj_color_to_midi_rgb_values
 
 class MainDisplayController(P1NanoTGEComponent):
     """
@@ -30,6 +30,7 @@ class MainDisplayController(P1NanoTGEComponent):
         self.__bank_channel_offset = 0
         self.__meters_enabled = False
         self.__show_return_tracks = False
+        self.__show_current_track_colors = False #False means we show track colors for all tracks within the visible range True means all displays show the color of the selected track
 
     def destroy(self):
         self.enable_meters(False)
@@ -69,6 +70,12 @@ class MainDisplayController(P1NanoTGEComponent):
     def set_show_parameter_names(self, enable):
         self.__show_parameter_names = enable
 
+    def set_show_current_track_colors(self, enable):
+        self.__show_current_track_colors = enable
+
+    def show_current_track_color(self):
+        return self.__show_current_track_colors
+
     def set_channel_offset(self, channel_offset):
         self.__bank_channel_offset = channel_offset
 
@@ -105,8 +112,6 @@ class MainDisplayController(P1NanoTGEComponent):
             d.refresh_state()
 
     def on_update_display_timer(self):
-        
-        strip_index = 0
         for display in self.__displays:
             if self.__channel_strip_mode:
                 upper_string = ''
@@ -156,6 +161,21 @@ class MainDisplayController(P1NanoTGEComponent):
                     else:
                         lower_string += self.__generate_6_char_string('')
                     lower_string += ' '
+
+
+                if self.__show_current_track_colors:
+                    track_colors = []
+                    for i in range(NUM_CHANNEL_STRIPS):
+                        track_colors.append(liveobj_color_to_midi_rgb_values(self.song().view.selected_track))
+                    display.send_display_colors(track_colors)
+                else:
+                    track_colors = []
+                    for i, track in enumerate(tracks):
+                        if i in track_index_range:
+                            track_colors.append(liveobj_color_to_midi_rgb_values(track))
+                    display.send_display_colors(track_colors)
+
+
                 display.send_display_string(upper_string, 0, 0)
                 if not self.__meters_enabled:
                     display.send_display_string(lower_string, 1, 0)

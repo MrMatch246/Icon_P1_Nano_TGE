@@ -45,6 +45,20 @@ class MainDisplay(P1NanoTGEComponent):
             display_sysex = (240, 0, 0, 102, device_type, 18, offset) + tuple(message_string) + (247,)
             self.send_midi(display_sysex)
 
+    def send_display_colors(self, track_colors):
+        sysex_header = ["F0", "00", "02", "4E", "16", "14"]
+        sysex_footer = ["F7"]
+
+        # Flatten the color data into the SysEx message
+        color_data = [str(hex(item)) for color in track_colors for item in color]  # Flatten the color list
+        sysex_message = sysex_header + color_data + sysex_footer
+
+        # Convert to MIDI bytes as integers
+        midi_bytes = tuple(int(byte, 16) for byte in sysex_message)
+
+        # Send the SysEx message
+        self.send_midi(midi_bytes)
+
     def refresh_state(self):
         self.__last_send_messages = [[], []]
 

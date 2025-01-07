@@ -155,7 +155,7 @@ class P1NanoTGE(object):
             s.build_midi_map(midi_map_handle)
         self.__master_strip.build_midi_map(midi_map_handle)
         for i in range(SID_FIRST, SID_LAST + 1):
-            if i not in function_key_control_switch_ids:
+            if i not in function_key_control_switch_ids or True: #TODO This forwards all notes to the MIDI handling in the script
                 Live.MidiMap.forward_midi_note(self.handle(), midi_map_handle,
                                                0, i)
         Live.MidiMap.forward_midi_cc(self.handle(), midi_map_handle, 0,
@@ -202,7 +202,7 @@ class P1NanoTGE(object):
                     self.__channel_strip_controller.handle_control_switch_ids(
                         note, value)
                 if note in function_key_control_switch_ids:
-                    self.__software_controller.handle_function_key_switch_ids(
+                    self.handle_function_key_switch_ids(
                         note, value)
                 if note in software_controls_switch_ids:
                     self.__software_controller.handle_software_controls_switch_ids(
@@ -280,3 +280,13 @@ class P1NanoTGE(object):
         elif switch_id == SID_DISPLAY_SMPTE_BEATS:
             if value == BUTTON_PRESSED:
                 self.__time_display.toggle_mode()
+
+    def handle_function_key_switch_ids(self, switch_id, value):
+            if value == BUTTON_PRESSED:
+                if switch_id == SID_SOFTWARE_F1:
+                    sys.stderr.write('F1 pressed')
+                    self.__main_display.send_display_color(0, 0, 0)
+                elif switch_id == SID_SOFTWARE_F2:
+                    pass
+                else:
+                    pass
