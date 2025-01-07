@@ -298,11 +298,11 @@ class ChannelStripController(P1NanoTGEComponent):
         elif self.__assignment_mode == CSM_PLUGINS and self.__plugin_mode == PCM_DEVICES:
             self.handle_pressed_v_pot_plugin_device(stack_offset, strip_index)
         elif self.__assignment_mode == CSM_MULTI_TGE:
-            if strip_index in range(0, self.number_of_sends()+1):
+            if strip_index in range(0, self.total_number_of_sends() + 1):
                 self.handle_pressed_v_pot_reset_value(stack_offset, strip_index)
-            elif strip_index in range(self.number_of_sends()+1,NUM_CHANNEL_STRIPS + 1):
+            elif strip_index in range(self.total_number_of_sends() + 1, NUM_CHANNEL_STRIPS + 1):
                 if self.__plugin_mode == PCM_DEVICES:
-                    self.handle_pressed_v_pot_plugin_device(stack_offset, strip_index-self.number_of_sends()-1)
+                    self.handle_pressed_v_pot_plugin_device(stack_offset, strip_index - self.total_number_of_sends() - 1)
                 elif self.__plugin_mode == PCM_PARAMETERS:
                     self.handle_pressed_v_pot_reset_value(stack_offset, strip_index)
 
@@ -625,12 +625,12 @@ class ChannelStripController(P1NanoTGEComponent):
 
     def send_strips_tge(self):
         #TODO CHECK OFFSETS HERE, MAYBE NEED TO ADD or SUBSTRACT 1
-        return self.__channel_strips[1:min(NUM_CHANNEL_STRIPS, self.number_of_sends()+1)]
+        return self.__channel_strips[1:min(NUM_CHANNEL_STRIPS, self.total_number_of_sends() + 1)]
 
     def plugin_strips_tge(self):
         #TODO CHECK OFFSETS HERE, MAYBE NEED TO ADD or SUBSTRACT 1
-        if self.number_of_sends() + 1 < NUM_CHANNEL_STRIPS:
-            return self.__channel_strips[self.number_of_sends()+1:NUM_CHANNEL_STRIPS]
+        if self.total_number_of_sends() + 1 < NUM_CHANNEL_STRIPS:
+            return self.__channel_strips[self.total_number_of_sends() + 1:NUM_CHANNEL_STRIPS]
         else:
             return []
 
@@ -652,8 +652,8 @@ class ChannelStripController(P1NanoTGEComponent):
             if self.__assignment_mode == CSM_MULTI_TGE:
 
                 do_volpan = index == 0
-                do_sends = index in range(1, self.number_of_sends()+1)
-                do_plugins =  index in range(self.number_of_sends()+1,NUM_CHANNEL_STRIPS + 1)
+                do_sends = index in self.tge_sends_indices()
+                do_plugins =  index in self.tge_plugins_indices()
                 #sys.stderr.write("do_volpan: " + str(do_volpan) + " do_sends: " + str(do_sends) + " do_plugins: " + str(do_plugins) )
                 if do_volpan:
                     if current_track and current_track.has_audio_output:
@@ -663,7 +663,7 @@ class ChannelStripController(P1NanoTGEComponent):
                         slider_display_mode = VPOT_DISPLAY_WRAP
 
                 elif do_plugins:
-                    vpot_param = self.__plugin_parameter(index-self.number_of_sends()-1, current_strip.stack_offset())
+                    vpot_param = self.__plugin_parameter(index - self.total_number_of_sends() - 1, current_strip.stack_offset())
                     vpot_display_mode = VPOT_DISPLAY_WRAP
                     if current_track and current_track.has_audio_output:
                         slider_param = (s.assigned_track().mixer_device.volume, u'Volume')
@@ -676,21 +676,21 @@ class ChannelStripController(P1NanoTGEComponent):
                         slider_param = (s.assigned_track().mixer_device.volume, u'Volume')
                         slider_display_mode = VPOT_DISPLAY_WRAP
             else:
-                if do_volpan or self.__assignment_mode == CSM_VOLPAN:
+                if self.__assignment_mode == CSM_VOLPAN:
                     if s.assigned_track() and s.assigned_track().has_audio_output:
                         vpot_param = (s.assigned_track().mixer_device.panning, u'Pan')
                         vpot_display_mode = VPOT_DISPLAY_BOOST_CUT
                         slider_param = (s.assigned_track().mixer_device.volume, u'Volume')
                         slider_display_mode = VPOT_DISPLAY_WRAP
 
-                elif do_plugins or self.__assignment_mode == CSM_PLUGINS:
+                elif self.__assignment_mode == CSM_PLUGINS:
                     vpot_param = self.__plugin_parameter(s.strip_index(), s.stack_offset())
                     vpot_display_mode = VPOT_DISPLAY_WRAP
                     if s.assigned_track() and s.assigned_track().has_audio_output:
                         slider_param = (s.assigned_track().mixer_device.volume, u'Volume')
                         slider_display_mode = VPOT_DISPLAY_WRAP
 
-                elif do_sends or self.__assignment_mode == CSM_SENDS:
+                elif self.__assignment_mode == CSM_SENDS:
                     vpot_param = self.__send_parameter(s.strip_index(), s.stack_offset())
                     vpot_display_mode = VPOT_DISPLAY_WRAP
                     if s.assigned_track() and s.assigned_track().has_audio_output:
@@ -875,12 +875,31 @@ class ChannelStripController(P1NanoTGEComponent):
         """ In IO mode, collect all strings that will be visible in the main display manually """
         if not self.__any_fader_is_touched():
 
-            if self.__assignment_mode == CSM_MULTI_TGE:
-                #TODO Replace Placeholder with actual strings
-                chan_strings = list("MultiTGE")
+            if self.__assignment_mode == CSM_MULTI_TGE and self.__plugin_mode == PCM_DEVICES:
+                for plugin in self.__displayed_plugins:
+                    if plugin != None:
+                        plugin.remove_name_listener(self.__update_plugin_names)
+                self.__displayed_plugins = []
+                sel_track = self.song().view.selected_track
+                plugin_start = self.total_number_of_sends() + 1
+                for i in range(len(self.__channel_strips)):
+                    display_index = i + self.__plugin_mode_offsets[PCM_DEVICES]
+                    device_index = display_index - plugin_start
+                    if display_index >= plugin_start and display_index < len(sel_track.devices) + plugin_start:
+                        sel_track.devices[device_index].add_name_listener(
+                            self.__update_plugin_names)
+                        self.__displayed_plugins.append(
+                            sel_track.devices[device_index])
+                    else:
+                        self.__displayed_plugins.append(None)
 
-                self.__main_display_controller.set_channel_strip_strings(chan_strings)
+                device_strings = {}
+                for index,plugin in enumerate(self.__displayed_plugins):
+                    if plugin != None:
+                        device_strings[index] = plugin.name
 
+                #sys.stderr.write(f"Updating plugin names: {device_strings}\n")
+                self.__main_display_controller.update_channel_strip_strings(device_strings)
             elif self.__assignment_mode == CSM_IO:
                 targets = []
                 for s in self.__channel_strips:
@@ -952,8 +971,8 @@ class ChannelStripController(P1NanoTGEComponent):
 
         #TODO TEST THIS
         if self.__assignment_mode == CSM_MULTI_TGE:
-            do_plugin = len(self.plugin_strips_tge()) > 0
-            do_sends = len(self.send_strips_tge()) > 0
+            do_plugin = self.tge_plugin_slots() > 0
+            do_sends = self.tge_sends_slots() > 0
         else:
             do_plugin = self.__assignment_mode == CSM_PLUGINS
             do_sends = self.__assignment_mode == CSM_SENDS

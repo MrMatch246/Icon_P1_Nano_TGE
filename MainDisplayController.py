@@ -89,6 +89,14 @@ class MainDisplayController(P1NanoTGEComponent):
             self.set_parameters(None)
         self.__channel_strip_strings = channel_strip_strings
 
+    def update_channel_strip_strings(self, channel_strip_strings_dict):
+        if not self.__channel_strip_strings:
+            self.__channel_strip_strings = [None for x in range(NUM_CHANNEL_STRIPS)]
+        #sys.stderr.write(f'uCSS: {channel_strip_strings_dict} for {self.__channel_strip_strings}\n')
+        for i, channel_strip_string in channel_strip_strings_dict.items():
+            self.__channel_strip_strings = self.__channel_strip_strings[:i] + [
+                channel_strip_string] + self.__channel_strip_strings[i + 1:]
+
     def set_show_return_track_names(self, show_returns):
         self.__show_return_tracks = show_returns
 
@@ -119,7 +127,8 @@ class MainDisplayController(P1NanoTGEComponent):
                     tracks = self.song().return_tracks
                 else:
                     tracks = self.song().visible_tracks
-                for t in track_index_range:
+
+                for strip_index, t in enumerate(track_index_range):
                     if self.__parameters and self.__show_parameter_names:
                         if self.__parameters[strip_index]:
                             upper_string += self.__generate_6_char_string(
@@ -132,21 +141,21 @@ class MainDisplayController(P1NanoTGEComponent):
                     else:
                         upper_string += self.__generate_6_char_string('')
                     upper_string += ' '
-                    if self.__parameters and self.__parameters[strip_index]:
+
+                    if self.__channel_strip_strings and \
+                        self.__channel_strip_strings[strip_index]:
+                        lower_string += self.__generate_6_char_string(
+                            self.__channel_strip_strings[strip_index])
+                    elif self.__parameters and self.__parameters[strip_index]:
+
                         if self.__parameters[strip_index][0]:
                             lower_string += self.__generate_6_char_string(
                                 str(self.__parameters[strip_index][0]))
                         else:
                             lower_string += self.__generate_6_char_string('')
-                    elif self.__channel_strip_strings and \
-                        self.__channel_strip_strings[strip_index]:
-                        lower_string += self.__generate_6_char_string(
-                            self.__channel_strip_strings[strip_index])
                     else:
                         lower_string += self.__generate_6_char_string('')
                     lower_string += ' '
-                    strip_index += 1
-
                 display.send_display_string(upper_string, 0, 0)
                 if not self.__meters_enabled:
                     display.send_display_string(lower_string, 1, 0)

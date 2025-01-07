@@ -59,8 +59,20 @@ class P1NanoTGEComponent(object):
             self.application().view.show_view('Detail')
             self.application().view.focus_view(self.visible_detail_view())
 
-    def number_of_sends(self):
+    def total_number_of_sends(self):
         return len(self.song().view.selected_track.mixer_device.sends)
+
+    def tge_sends_slots(self):
+        return min(NUM_CHANNEL_STRIPS - 1, self.total_number_of_sends())
+
+    def tge_plugin_slots(self):
+        return NUM_CHANNEL_STRIPS - 1 - self.tge_sends_slots()
+
+    def tge_sends_indices(self):
+        return range(1, 1 + self.tge_sends_slots())
+
+    def tge_plugins_indices(self):
+        return range(1 + self.tge_sends_slots(), NUM_CHANNEL_STRIPS)
 
     def sends(self):
         return self.song().view.selected_track.mixer_device.sends
