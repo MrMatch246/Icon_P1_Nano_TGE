@@ -645,10 +645,6 @@ class ChannelStripController(P1NanoTGEComponent):
             vpot_display_mode = VPOT_DISPLAY_SINGLE_DOT
             slider_display_mode = VPOT_DISPLAY_SINGLE_DOT
 
-            do_volpan= False
-            do_plugins = False
-            do_sends = False
-
             if self.__assignment_mode == CSM_MULTI_TGE:
 
                 do_volpan = index == 0
@@ -771,12 +767,14 @@ class ChannelStripController(P1NanoTGEComponent):
             sid_on_switch = SID_ASSIGNMENT_PLUG_INS
         else:
             sid_on_switch = None
-        for s in [SID_ASSIGNMENT_IO, SID_ASSIGNMENT_SENDS, SID_ASSIGNMENT_PAN,
-                  SID_ASSIGNMENT_PLUG_INS]:
-            if s == sid_on_switch:
-                self.send_midi((NOTE_ON_STATUS, s, BUTTON_STATE_ON))
-            else:
-                self.send_midi((NOTE_ON_STATUS, s, BUTTON_STATE_OFF))
+        assignment_switch_ids = [SID_ASSIGNMENT_IO, SID_ASSIGNMENT_SENDS, SID_ASSIGNMENT_PAN, SID_ASSIGNMENT_PLUG_INS]
+        assignment_switch_ids.remove(sid_on_switch)
+        for s in assignment_switch_ids:
+            self.send_midi((NOTE_ON_STATUS, s, BUTTON_STATE_OFF))
+            self.send_midi((NOTE_ON_STATUS, s, BUTTON_STATE_OFF))
+        self.send_midi((NOTE_ON_STATUS, sid_on_switch, BUTTON_STATE_ON))
+        self.send_midi((NOTE_ON_STATUS, sid_on_switch, BUTTON_STATE_ON))
+
 
     def __update_assignment_display(self):
         """
