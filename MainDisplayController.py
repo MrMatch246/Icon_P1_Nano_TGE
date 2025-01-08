@@ -136,31 +136,31 @@ class MainDisplayController(P1NanoTGEComponent):
                 for strip_index, t in enumerate(track_index_range):
                     if self.__parameters and self.__show_parameter_names:
                         if self.__parameters[strip_index]:
-                            upper_string += self.__generate_6_char_string(
+                            upper_string += self.__generate_7_char_string(
                                 self.__parameters[strip_index][1])
                         else:
-                            upper_string += self.__generate_6_char_string('')
+                            upper_string += self.__generate_7_char_string('')
                     elif t < len(tracks):
-                        upper_string += self.__generate_6_char_string(
+                        upper_string += self.__generate_7_char_string(
                             tracks[t].name)
                     else:
-                        upper_string += self.__generate_6_char_string('')
-                    upper_string += ' '
+                        upper_string += self.__generate_7_char_string('')
+                    #upper_string += ' '
 
                     if self.__channel_strip_strings and \
                         self.__channel_strip_strings[strip_index]:
-                        lower_string += self.__generate_6_char_string(
+                        lower_string += self.__generate_7_char_string(
                             self.__channel_strip_strings[strip_index])
                     elif self.__parameters and self.__parameters[strip_index]:
 
                         if self.__parameters[strip_index][0]:
-                            lower_string += self.__generate_6_char_string(
+                            lower_string += self.__generate_7_char_string(
                                 str(self.__parameters[strip_index][0]))
                         else:
-                            lower_string += self.__generate_6_char_string('')
+                            lower_string += self.__generate_7_char_string('')
                     else:
-                        lower_string += self.__generate_6_char_string('')
-                    lower_string += ' '
+                        lower_string += self.__generate_7_char_string('')
+                    #lower_string += ' '
 
 
                 if self.__show_current_track_colors:
@@ -189,21 +189,21 @@ class MainDisplayController(P1NanoTGEComponent):
                     self.__test = 0
                 self.send_display_string(ascii_message, 0, self.__test)
 
-    def __generate_6_char_string(self, display_string):
-        
+    def __generate_7_char_string(self, display_string):
+        max_length = 7
         if not display_string:
-            return '      '
-        if len(display_string.strip()) > 6 and display_string.endswith(
+            return ' ' * max_length
+        if len(display_string.strip()) > max_length and display_string.endswith(
             'dB') and display_string.find('.') != -1:
             display_string = display_string[:-2]
-        if len(display_string) > 6:
+        if len(display_string) > max_length:
             for um in [' ',
                        'i',
                        'o',
                        'u',
                        'e',
                        'a']:
-                while len(display_string) > 6 and display_string.rfind(um,
+                while len(display_string) > max_length and display_string.rfind(um,
                                                                        1) != -1:
                     
                     um_pos = display_string.rfind(um, 1)
@@ -211,9 +211,9 @@ class MainDisplayController(P1NanoTGEComponent):
                                                                um_pos + 1:]
 
         else:
-            display_string = display_string.center(6)
+            display_string = display_string.center(max_length)
         ret = ''
-        for i in range(6):
+        for i in range(max_length):
             ret += display_string[i]
 
         return ret
