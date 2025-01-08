@@ -4,9 +4,12 @@ import sys
 from itertools import chain
 
 from ableton.v2.base import liveobj_valid
-from builtins import range
-from .P1NanoTGEComponent import *
 import Live
+
+from .ChannelStripController import ChannelStripController
+from .P1NanoTGEComponent import *
+from .settings import encoder_sensitivity
+
 
 class ChannelStrip(P1NanoTGEComponent):
     # """ Represets a Channel Strip of the Mackie Control, which consists out of the """
@@ -14,7 +17,7 @@ class ChannelStrip(P1NanoTGEComponent):
 
     def __init__(self, main_script, strip_index):
         P1NanoTGEComponent.__init__(self, main_script)
-        self.__channel_strip_controller = None
+        self.__channel_strip_controller : ChannelStripController = None
         self.__is_touched = False
         self.__strip_index = strip_index
         self.__stack_offset = 0
@@ -226,14 +229,15 @@ class ChannelStrip(P1NanoTGEComponent):
             feeback_rule.cc_value_map = tuple(
                 [self.__v_pot_display_mode * 16 + x for x in
                  range(1, range_end)])
-            feeback_rule.delay_in_ms = -1.0
+            feeback_rule.delay_in_ms = 0.0
             Live.MidiMap.map_midi_cc_with_feedback_map(midi_map_handle,
                                                        self.__v_pot_parameter,
                                                        0,
                                                        FID_PANNING_BASE + self.__strip_index,
-                                                       Live.MidiMap.MapMode.relative_signed_bit,
+                                                       Live.MidiMap.MapMode.relative_smooth_signed_bit,
                                                        feeback_rule,
-                                                       needs_takeover)
+                                                       needs_takeover,
+                                                       encoder_sensitivity)
             Live.MidiMap.send_feedback_for_parameter(midi_map_handle,
                                                      self.__v_pot_parameter)
         else:

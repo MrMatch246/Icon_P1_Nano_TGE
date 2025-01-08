@@ -155,8 +155,14 @@ class P1NanoTGE(object):
             s.build_midi_map(midi_map_handle)
         self.__master_strip.build_midi_map(midi_map_handle)
         for i in range(SID_FIRST, SID_LAST + 1):
-            if i not in function_key_control_switch_ids or True: #TODO This forwards all notes to the MIDI handling in the script
-                Live.MidiMap.forward_midi_note(self.handle(), midi_map_handle,
+            #TODO add exception for function_key_control_switch_ids that are not mapped to any function
+            # this means keeping track of the function key switch ids that are mapped to a function
+            # and only forwarding those to Live.MidiMap.forward_midi_note
+            # such that the others can be used as notes in ableton to map things there?
+            # not sure if this is necessary, but it would be nice to have the option
+            #function_key_control_switch_ids
+
+            Live.MidiMap.forward_midi_note(self.handle(), midi_map_handle,
                                                0, i)
         Live.MidiMap.forward_midi_cc(self.handle(), midi_map_handle, 0,
                                      JOG_WHEEL_CC_NO)
@@ -182,7 +188,6 @@ class P1NanoTGE(object):
         self.__c_instance.send_midi(midi_event_bytes)
 
     def receive_midi(self, midi_bytes):
-        
         if midi_bytes[0] & 240 == NOTE_ON_STATUS or midi_bytes[
             0] & 240 == NOTE_OFF_STATUS:
 
@@ -245,7 +250,7 @@ class P1NanoTGE(object):
         result = Live.MidiMap.MapMode.absolute
         if cc_no in range(FID_PANNING_BASE,
                           FID_PANNING_BASE + NUM_CHANNEL_STRIPS):
-            result = Live.MidiMap.MapMode.relative_signed_bit
+            result = Live.MidiMap.MapMode.relative_smooth_signed_bit
         return result
 
     def shift_is_pressed(self):
