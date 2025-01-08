@@ -97,9 +97,9 @@ class MainDisplayController(P1NanoTGEComponent):
         self.__channel_strip_strings = channel_strip_strings
 
     def update_channel_strip_strings(self, channel_strip_strings_dict):
+        #sys.stderr.write(f'uCSS: {channel_strip_strings_dict} for {self.__channel_strip_strings}\n')
         if not self.__channel_strip_strings:
             self.__channel_strip_strings = [None for x in range(NUM_CHANNEL_STRIPS)]
-        #sys.stderr.write(f'uCSS: {channel_strip_strings_dict} for {self.__channel_strip_strings}\n')
         for i, channel_strip_string in channel_strip_strings_dict.items():
             self.__channel_strip_strings = self.__channel_strip_strings[:i] + [
                 channel_strip_string] + self.__channel_strip_strings[i + 1:]
@@ -140,13 +140,12 @@ class MainDisplayController(P1NanoTGEComponent):
                                 self.__parameters[strip_index][1])
                         else:
                             upper_string += self.__generate_7_char_string('')
-                    elif t < len(tracks):
+                    elif t < len(tracks) and not self.__show_current_track_colors:
                         upper_string += self.__generate_7_char_string(
                             tracks[t].name)
                     else:
                         upper_string += self.__generate_7_char_string('')
                     #upper_string += ' '
-
                     if self.__channel_strip_strings and \
                         self.__channel_strip_strings[strip_index]:
                         lower_string += self.__generate_7_char_string(
@@ -161,7 +160,8 @@ class MainDisplayController(P1NanoTGEComponent):
                     else:
                         lower_string += self.__generate_7_char_string('')
                     #lower_string += ' '
-
+                #sys.stderr.write(f'upper_string: {upper_string}')
+                #sys.stderr.write(f'lower_string: {lower_string}\n')
 
                 if self.__show_current_track_colors:
                     track_colors = []
@@ -176,9 +176,9 @@ class MainDisplayController(P1NanoTGEComponent):
                     display.send_display_colors(track_colors)
 
 
-                display.send_display_string(upper_string, 0, 0)
+                display.send_display_string(lower_string, 0, 0)
                 if not self.__meters_enabled:
-                    display.send_display_string(lower_string, 1, 0)
+                    display.send_display_string(upper_string, 1, 0)
             else:
                 ascii_message = u'< _1234 guck ma #!?:;_ >'
                 if not self.__test:

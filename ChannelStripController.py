@@ -506,9 +506,11 @@ class ChannelStripController(P1NanoTGEComponent):
         if mode == CSM_PLUGINS:
             self.__assignment_mode = mode
             self.__main_display_controller.set_show_parameter_names(True)
+            self.__main_display_controller.set_show_current_track_colors(True)
             self.__set_plugin_mode(PCM_DEVICES)
         elif mode == CSM_SENDS:
             self.__main_display_controller.set_show_parameter_names(True)
+            self.__main_display_controller.set_show_current_track_colors(True)
             self.__assignment_mode = mode
         elif mode == CSM_MULTI_TGE:
             #TODO TEST THIS
@@ -894,18 +896,20 @@ class ChannelStripController(P1NanoTGEComponent):
                         plugin.remove_name_listener(self.__update_plugin_names)
                 self.__displayed_plugins = []
                 sel_track = self.song().view.selected_track
-                plugin_start = self.total_number_of_sends() + 1 #+ self.__plugin_mode_offsets[PCM_DEVICES]
+                plugin_start = self.total_number_of_sends() + 1 #+ self.__plugin_mode_offsets[PCM_DEVICES]G
                 for i in range(len(self.__channel_strips)):
-                    display_index = i + self.__plugin_mode_offsets[PCM_DEVICES]
-                    device_index = display_index - plugin_start
-                    if display_index >= plugin_start and display_index < len(sel_track.devices) + plugin_start:
-                        sel_track.devices[device_index].add_name_listener(
-                            self.__update_plugin_names)
-                        self.__displayed_plugins.append(
-                            sel_track.devices[device_index])
+                    device_index = i - plugin_start + self.__plugin_mode_offsets[PCM_DEVICES]
+                    if i >= plugin_start and i < len(sel_track.devices) + plugin_start:
+
+                        if device_index < len(sel_track.devices):
+                            sel_track.devices[device_index].add_name_listener(
+                                self.__update_plugin_names)
+                            self.__displayed_plugins.append(
+                                sel_track.devices[device_index])
+                        else:
+                            self.__displayed_plugins.append(None)
                     else:
                         self.__displayed_plugins.append(None)
-
                 device_strings = {}
                 for index,plugin in enumerate(self.__displayed_plugins):
                     if plugin != None:
