@@ -1,4 +1,7 @@
 from __future__ import absolute_import, print_function, unicode_literals
+
+import sys
+
 from .consts import *
 
 class P1NanoTGEComponent(object):
@@ -35,7 +38,10 @@ class P1NanoTGEComponent(object):
         return self.__main_script.application()
 
     def send_midi(self, bytes):
-        self.__main_script.send_midi(bytes)
+        if self.__main_script:
+            self.__main_script.send_midi(bytes)
+        else:
+            sys.stderr.write('Main script not available, cannot send MIDI message')
 
     def request_rebuild_midi_map(self):
         self.__main_script.request_rebuild_midi_map()
