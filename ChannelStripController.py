@@ -668,7 +668,7 @@ class ChannelStripController(P1NanoTGEComponent):
                 #sys.stderr.write("do_volpan: " + str(do_volpan) + " do_sends: " + str(do_sends) + " do_plugins: " + str(do_plugins) )
                 if do_volpan:
                     if current_track and current_track.has_audio_output:
-                        vpot_param = (current_track.mixer_device.panning, u'Pan')
+                        vpot_param = (current_track.mixer_device.panning, current_track.name)
                         vpot_display_mode = VPOT_DISPLAY_BOOST_CUT
                         slider_param = (current_track.mixer_device.volume, u'Volume')
                         slider_display_mode = VPOT_DISPLAY_WRAP
