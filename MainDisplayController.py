@@ -125,7 +125,7 @@ class MainDisplayController(P1NanoTGEComponent):
                             selected_track_index = i
                             track_index_range = list(
                                 range(selected_track_index,
-                                        selected_track_index + NUM_CHANNEL_STRIPS))
+                                      selected_track_index + NUM_CHANNEL_STRIPS))
                             break
 
                 if self.__show_return_tracks:
@@ -179,6 +179,12 @@ class MainDisplayController(P1NanoTGEComponent):
                 display.send_display_string(lower_string, 0, 0)
                 if not self.__meters_enabled:
                     display.send_display_string(upper_string, 1, 0)
+
+                #below_lower_string = ["ABCDEFx", "GHIJKLx", "MNOPQRx", "STUVWXx", "YZ1234", "567890","abcdef", "ghijky"]
+                #below_lower_string2 = ["ABCDEFx", "GHIJKLx", "MNOPQRx", "STUVWXx", "YZ1234", "567890","abcdef", "ghijky"]
+
+                #display.send_secondary_display_string(below_lower_string)
+                #display.send_secondary_display_string(below_lower_string2, 1)
             else:
                 ascii_message = u'< _1234 guck ma #!?:;_ >'
                 if not self.__test:
