@@ -672,6 +672,8 @@ class ChannelStripController(P1NanoTGEComponent):
                         vpot_display_mode = VPOT_DISPLAY_BOOST_CUT
                         slider_param = (current_track.mixer_device.volume, u'Volume')
                         slider_display_mode = VPOT_DISPLAY_WRAP
+                    elif current_track:
+                        vpot_param = (None, current_track.name)
 
                 elif do_plugins:
                     vpot_param = self.__plugin_parameter(index - self.total_number_of_sends() - 1, current_strip.stack_offset())
