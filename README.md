@@ -12,8 +12,8 @@ Watch this repo to get notifications about updates!
     - Windows:  \Users\[username]\AppData\Roaming\Ableton\Live x.x.x\Preferences\Log.txt
     - Mac:  /Users/[username]/Library/Preferences/Ableton/Live x.x.x/Log.txt
 
--IMPORTANT: Rename the "Icon_P1_Nano_TGE-main" folder to "Icon_P1_Nano_TGE" (if you see it, do it)
--IF THE FADER DOESNT WORK : USE THE Custom_Mapping.imap file instead, and customize it to your needs. Also please report this as an issue because i dont know why this fix works.
+- IMPORTANT: Rename the "Icon_P1_Nano_TGE-main" folder to "Icon_P1_Nano_TGE" (if you see it, do it)
+- IF THE FADER DOESNT WORK : USE THE Custom_Mapping.imap file instead, and customize it to your needs. Also please report this as an issue because i dont know why this fix works.
 
 
 ## Current Features (WIP Docu) :
