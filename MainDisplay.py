@@ -9,6 +9,7 @@ class MainDisplay(P1NanoTGEComponent):
         P1NanoTGEComponent.__init__(self, main_script)
         self.__stack_offset = 0
         self.__last_send_messages = [[], [], [], []]
+        self.__track_colors = None
 
     def destroy(self):
         NUM_CHARS_PER_DISPLAY_LINE = 54
@@ -100,15 +101,17 @@ class MainDisplay(P1NanoTGEComponent):
         sysex_header = ["F0", "00", "02", "4E", "16", "14"]
         sysex_footer = ["F7"]
 
-        # Flatten the color data into the SysEx message
-        color_data = [str(hex(item)) for color in track_colors for item in color]  # Flatten the color list
-        sysex_message = sysex_header + color_data + sysex_footer
+        if track_colors != self.__track_colors:
+            self.__track_colors = track_colors
+            # Flatten the color data into the SysEx message
+            color_data = [str(hex(item)) for color in track_colors for item in color]  # Flatten the color list
+            sysex_message = sysex_header + color_data + sysex_footer
 
-        # Convert to MIDI bytes as integers
-        midi_bytes = tuple(int(byte, 16) for byte in sysex_message)
+            # Convert to MIDI bytes as integers
+            midi_bytes = tuple(int(byte, 16) for byte in sysex_message)
 
-        # Send the SysEx message
-        self.send_midi(midi_bytes)
+            # Send the SysEx message
+            self.send_midi(midi_bytes)
 
     def refresh_state(self):
         self.__last_send_messages = [[], [] ,[], []]
