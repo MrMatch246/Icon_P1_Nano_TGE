@@ -76,7 +76,7 @@ class ChannelStripController(P1NanoTGEComponent):
         self.__channel_strips = channel_strips
         self.__main_display_controller = main_display_controller
         self.__meters_enabled = False
-        self.__assignment_mode = CSM_VOLPAN
+        self.__assignment_mode = CSM_MULTI_TGE
         self.__sub_mode_in_io_mode = CSM_IO_FIRST_MODE
         self.__plugin_mode = PCM_DEVICES
         self.__plugin_mode_offsets = [0 for x in range(PCM_NUMMODES)]

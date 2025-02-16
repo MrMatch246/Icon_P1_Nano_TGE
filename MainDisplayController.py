@@ -26,11 +26,11 @@ class MainDisplayController(P1NanoTGEComponent):
         self.__parameters = [[] for x in range(NUM_CHANNEL_STRIPS)]
         self.__channel_strip_strings = ['' for x in range(NUM_CHANNEL_STRIPS)]
         self.__channel_strip_mode = True
-        self.__show_parameter_names = False
+        self.__show_parameter_names = True
         self.__bank_channel_offset = 0
         self.__meters_enabled = False
         self.__show_return_tracks = False
-        self.__show_current_track_colors = False #False means we show track colors for all tracks within the visible range True means all displays show the color of the selected track
+        self.__show_current_track_colors = True #False means we show track colors for all tracks within the visible range True means all displays show the color of the selected track
 
     def destroy(self):
         self.enable_meters(False)
