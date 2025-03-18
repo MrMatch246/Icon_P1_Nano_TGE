@@ -75,7 +75,7 @@ class ChannelStripController(P1NanoTGEComponent):
         self.__master_strip = master_strip
         self.__channel_strips = channel_strips
         self.__main_display_controller = main_display_controller
-        self.__meters_enabled = False
+        self.__meters_enabled = True
         self.__assignment_mode = CSM_MULTI_TGE
         self.__sub_mode_in_io_mode = CSM_IO_FIRST_MODE
         self.__plugin_mode = PCM_DEVICES
@@ -755,21 +755,20 @@ class ChannelStripController(P1NanoTGEComponent):
 
     def __apply_meter_mode(self, meter_state_changed = False):
         """ Update the meter mode in the displays and channel strips """
+        send_meter_mode = self._last_assignment_mode != self.__assignment_mode or self._need_to_update_meter(
+            meter_state_changed)
+        enabled = self.__meters_enabled and self.__assignment_mode is CSM_VOLPAN
         if self.__assignment_mode == CSM_MULTI_TGE:
             #TODO TEST THIS !!!!
             for index, s in enumerate(self.__channel_strips):
                 if index == 0:
-                    s.enable_meter_mode(True, needs_to_send_meter_mode=self._need_to_update_meter(meter_state_changed))
+                    s.enable_meter_mode(True, needs_to_send_meter_mode=send_meter_mode)
                 else:
-                    s.enable_meter_mode(False, needs_to_send_meter_mode=self._need_to_update_meter(meter_state_changed))
-
-
-        enabled = self.__meters_enabled and self.__assignment_mode is CSM_VOLPAN
-        send_meter_mode = self._last_assignment_mode != self.__assignment_mode or self._need_to_update_meter(
-            meter_state_changed)
-        for s in self.__channel_strips:
-            s.enable_meter_mode(enabled,
-                                needs_to_send_meter_mode=send_meter_mode)
+                    s.enable_meter_mode(False, needs_to_send_meter_mode=False)
+        elif enabled:
+            for s in self.__channel_strips:
+                s.enable_meter_mode(enabled,
+                                    needs_to_send_meter_mode=send_meter_mode)
         self.__main_display_controller.enable_meters(enabled)
         self._last_assignment_mode = self.__assignment_mode
 

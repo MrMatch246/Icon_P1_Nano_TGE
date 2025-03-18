@@ -63,6 +63,7 @@ class P1NanoTGE(object):
         self.is_pro_version = False
         self._received_firmware_version = False
         self._refresh_state_next_time = 0
+        self.__channel_strip_controller.set_assignment_mode(CSM_MULTI_TGE)
 
     def disconnect(self):
         for c in self.__components:

@@ -189,13 +189,19 @@ class ChannelStrip(P1NanoTGEComponent):
             self.unlight_vpot_leds()
 
     def on_update_display_timer(self):
-        
-        if not self.main_script().is_pro_version or self.__meters_enabled and self.__channel_strip_controller.assignment_mode() == CSM_VOLPAN:
+        assignment_mode = self.__channel_strip_controller.assignment_mode()
+        if self.__meters_enabled and (assignment_mode ==CSM_VOLPAN or assignment_mode == CSM_MULTI_TGE):
             if self.__assigned_track:
                 if self.__assigned_track.can_be_armed and self.__assigned_track.arm:
-                    meter_value = self.__assigned_track.input_meter_level
+                    if self.__assigned_track.has_audio_output:
+                        meter_value = (self.__assigned_track.input_meter_left + self.__assigned_track.input_meter_right)/2
+                    else:
+                        meter_value = self.__assigned_track.output_meter_level
                 else:
-                    meter_value = self.__assigned_track.output_meter_level
+                    if self.__assigned_track.has_audio_output:
+                        meter_value = (self.__assigned_track.output_meter_left + self.__assigned_track.output_meter_right)/2
+                    else:
+                        meter_value = self.__assigned_track.output_meter_level
             else:
                 meter_value = 0.0
             meter_byte = int(meter_value * 12.0) + (self.__strip_index << 4)
