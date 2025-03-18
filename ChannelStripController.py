@@ -253,6 +253,20 @@ class ChannelStripController(P1NanoTGEComponent):
             if value == BUTTON_PRESSED:
                 self.__toggle_view_returns()
 
+    def handle_toggle_io_disable(self):
+        for channel_strip in self.__channel_strips:
+            if channel_strip.is_selected():
+                current_routing = self.__routing_target(channel_strip)
+                available_routings = self.__available_routing_targets(channel_strip)
+                current_routing_index = list(available_routings).index(current_routing)
+                if current_routing_index == 0:
+                    new_routing = available_routings[-1]
+                elif current_routing_index == len(available_routings)-1:
+                    new_routing = available_routings[0]
+                else:
+                    new_routing = available_routings[current_routing_index]
+                self.__set_routing_target(channel_strip, new_routing)
+
     def handle_vpot_rotation(self, strip_index, stack_offset, cc_value):
         """ Forwarded to us by the channel_strips """
         if self.__assignment_mode == CSM_IO:

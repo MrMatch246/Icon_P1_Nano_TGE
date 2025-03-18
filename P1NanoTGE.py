@@ -291,6 +291,6 @@ class P1NanoTGE(object):
                 if switch_id == SID_SOFTWARE_F1:
                     self.__channel_strip_controller.set_assignment_mode(CSM_MULTI_TGE)
                 elif switch_id == SID_SOFTWARE_F2:
-                    pass
+                    self.__channel_strip_controller.handle_toggle_io_disable()
                 else:
                     pass

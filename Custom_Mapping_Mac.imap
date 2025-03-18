@@ -3269,9 +3269,9 @@
       <ctl id="102" kind="button" valueType="func" value="41" name="Send"
            lockBy="0" ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName=""
            type="note" chan="0" rotate="0" val1="-1" val2="-1"/>
-      <ctl id="103" kind="button" valueType="func" value="42" name="Pan"
+      <ctl id="103" kind="button" valueType="midi" value="55" name="Toggle IO"
            lockBy="0" ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName=""
-           type="nil" chan="0" rotate="0" val1="-1" val2="-1"/>
+           type="note" chan="1" rotate="0" val1="-1" val2="-1"/>
       <ctl id="104" kind="button" valueType="func" value="43" name="Plug-in"
            lockBy="0" ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName=""
            type="nil" chan="0" rotate="0" val1="-1" val2="-1"/>
@@ -3662,7 +3662,7 @@
            ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="note"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="209" kind="button" valueType="null" value="0" name="" ctrl="0"
-           shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
+           shift="0" alt="0" cmd="0" key="0" keyName="" type="null" chan="0"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="210" kind="button" valueType="null" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
@@ -13471,7 +13471,7 @@
            rotate="0" val1="-1" val2="-1"/>
     </mode>
   </slot>
-  <slot id="1" current="5" daw1="1" daw2="1" daw3="1">
+  <slot id="1" current="0" daw1="1" daw2="1" daw3="1">
     <mode id="1" mode="bitwig" protocol="0">
       <ctl id="1" kind="knob" valueType="midi" value="16" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="cc" chan="1"
@@ -26931,7 +26931,7 @@
            rotate="0" val1="-1" val2="-1"/>
     </mode>
   </slot>
-  <slot id="2" current="5" daw1="0" daw2="0" daw3="1">
+  <slot id="2" current="0" daw1="0" daw2="0" daw3="1">
     <mode id="1" mode="bitwig" protocol="0">
       <ctl id="1" kind="knob" valueType="midi" value="16" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="cc" chan="1"

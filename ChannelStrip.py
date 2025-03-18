@@ -167,6 +167,9 @@ class ChannelStrip(P1NanoTGEComponent):
                         self.__channel_strip_controller.handle_fader_touch(
                             self.__strip_index, self.__stack_offset, touched)
 
+    def is_selected(self):
+        return self.__assigned_track and self.__assigned_track == self.song().view.selected_track
+
     def handle_vpot_rotation(self, strip_index, cc_value):
         if strip_index is self.__strip_index and self.__channel_strip_controller != None:
             self.__channel_strip_controller.handle_vpot_rotation(
