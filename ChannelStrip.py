@@ -397,6 +397,7 @@ class MasterChannelStrip(P1NanoTGEComponent):
 
     def __init__(self, main_script):
         P1NanoTGEComponent.__init__(self, main_script)
+        self.__last_meter_value = None
         self.__strip_index = MASTER_CHANNEL_STRIP_INDEX
         self.__assigned_track = self.song().master_track
 
@@ -414,7 +415,17 @@ class MasterChannelStrip(P1NanoTGEComponent):
         pass
 
     def on_update_display_timer(self):
-        pass
+        if self.__assigned_track:
+            meter_peak = (self.__assigned_track.output_meter_left + self.__assigned_track.output_meter_right)/2
+            if meter_peak > 1.0:  # Overload
+                meter_value = 0x0D  # Red indicator for overload
+            else:
+                meter_value = min(0x0C, max(0x00, int(meter_peak * 0x0C)))
+
+
+            if self.__last_meter_value != meter_value or meter_value != 0.0:
+                self.__last_meter_value = meter_value
+                self.send_midi((0xD1 , meter_value))
 
     def enable_meter_mode(self, Enabled):
         pass
