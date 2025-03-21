@@ -194,14 +194,14 @@ class ChannelStrip(P1NanoTGEComponent):
             if self.__assigned_track:
                 if self.__assigned_track.can_be_armed and self.__assigned_track.arm:
                     if self.__assigned_track.has_audio_output:
-                        meter_value = (self.__assigned_track.input_meter_left + self.__assigned_track.input_meter_right)/2
+                        meter_value = (self.__assigned_track.output_meter_left + self.__assigned_track.output_meter_right)/2
                     else:
-                        meter_value = self.__assigned_track.output_meter_level
+                        meter_value = self.__assigned_track.input_meter_level
                 else:
                     if self.__assigned_track.has_audio_output:
                         meter_value = (self.__assigned_track.output_meter_left + self.__assigned_track.output_meter_right)/2
                     else:
-                        meter_value = self.__assigned_track.output_meter_level
+                        meter_value = self.__assigned_track.input_meter_level
             else:
                 meter_value = 0.0
             meter_byte = int(meter_value * 12.0) + (self.__strip_index << 4)
