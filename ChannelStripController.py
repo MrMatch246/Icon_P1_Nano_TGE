@@ -673,7 +673,6 @@ class ChannelStripController(P1NanoTGEComponent):
             slider_param = (None, None)
             vpot_display_mode = VPOT_DISPLAY_SINGLE_DOT
             slider_display_mode = VPOT_DISPLAY_SINGLE_DOT
-
             if self.__assignment_mode == CSM_MULTI_TGE:
 
                 do_volpan = index == 0
@@ -693,14 +692,14 @@ class ChannelStripController(P1NanoTGEComponent):
                     vpot_param = self.__plugin_parameter(index - self.total_number_of_sends() - 1, current_strip.stack_offset())
                     vpot_display_mode = VPOT_DISPLAY_WRAP
                     if current_track and current_track.has_audio_output:
-                        slider_param = (current_track.mixer_device.volume, u'Volume')
+                        slider_param = (None, None)
                         slider_display_mode = VPOT_DISPLAY_WRAP
 
                 elif do_sends:
                     vpot_param = self.__send_parameter(index-1, current_strip.stack_offset())
                     vpot_display_mode = VPOT_DISPLAY_WRAP
                     if current_track and current_track.has_audio_output:
-                        slider_param = (current_track.mixer_device.volume, u'Volume')
+                        slider_param = (None, None)
                         slider_display_mode = VPOT_DISPLAY_WRAP
             else:
                 if self.__assignment_mode == CSM_VOLPAN:

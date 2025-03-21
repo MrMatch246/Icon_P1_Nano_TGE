@@ -26,6 +26,7 @@ class P1NanoTGE(object):
         
         self.__c_instance = c_instance
         self.__components = []
+        self.__is_master_strip_touched = False
         self.__main_display = MainDisplay(self)
         
         self.__components.append(self.__main_display)
@@ -65,6 +66,15 @@ class P1NanoTGE(object):
         self._refresh_state_next_time = 0
         self.__channel_strip_controller.set_assignment_mode(CSM_MULTI_TGE)
 
+
+    def set_is_master_strip_touched(self, is_master_strip_touched):
+        self.__is_master_strip_touched = is_master_strip_touched
+
+    def get_is_master_strip_touched(self):
+        return self.__is_master_strip_touched
+
+
+
     def disconnect(self):
         for c in self.__components:
             c.destroy()
@@ -72,6 +82,8 @@ class P1NanoTGE(object):
 
     def __del__(self):
         self.disconnect()
+    def main_display(self):
+        return self.__main_display
 
     def connect_script_instances(self, instanciated_scripts):
         """
@@ -201,6 +213,7 @@ class P1NanoTGE(object):
                 if note in channel_strip_switch_ids + fader_touch_switch_ids:
                     for s in self.__channel_strips:
                         s.handle_channel_strip_switch_ids(note, value)
+                    self.__master_strip.handle_channel_strip_switch_ids(note, value)
                 if note in channel_strip_assignment_switch_ids:
                     self.__channel_strip_controller.handle_assignment_switch_ids(
                         note, value)

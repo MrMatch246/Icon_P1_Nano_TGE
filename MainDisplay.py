@@ -29,17 +29,24 @@ class MainDisplay(P1NanoTGEComponent):
         """
         self.__stack_offset = offset
 
-    def send_display_string(self, display_string, display_row, cursor_offset):
+    def send_display_string(self, display_string, display_row, cursor_offset,return_last_send_messages = False):
+        if not return_last_send_messages and self.main_script().get_is_master_strip_touched():
+            return
+
         if display_row in range(2):
             offset = display_row * 56 + cursor_offset
         else:
             return
-        message_string = [ord(c) for c in display_string]
+        if type(display_string) != list:
+            message_string = [ord(c) for c in display_string]
+        else:
+            message_string = display_string
         for i in range(len(message_string)):
             if message_string[i] >= 128:
                 message_string[i] = 0
 
         if self.__last_send_messages[display_row] != message_string:
+            last_send_messages = self.__last_send_messages
             self.__last_send_messages[display_row] = message_string
             if self.main_script().is_extension():
                 device_type = SYSEX_DEVICE_TYPE_XT
@@ -47,6 +54,8 @@ class MainDisplay(P1NanoTGEComponent):
                 device_type = SYSEX_DEVICE_TYPE
             display_sysex = (0xf0, 0x0, 0x0, 102, device_type, 18, offset) + tuple(message_string) + (247,)
             self.send_midi(display_sysex)
+            return last_send_messages
+        return self.__last_send_messages
 
     def send_secondary_display_string(self, display_strings, display_row = 0):
         """

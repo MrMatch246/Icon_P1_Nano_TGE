@@ -400,6 +400,7 @@ class MasterChannelStrip(P1NanoTGEComponent):
         self.__last_meter_value = None
         self.__strip_index = MASTER_CHANNEL_STRIP_INDEX
         self.__assigned_track = self.song().master_track
+        self.__last_display_strings =[[], [], [], []]
 
     def destroy(self):
         self.reset_fader()
@@ -409,6 +410,17 @@ class MasterChannelStrip(P1NanoTGEComponent):
         pass
 
     def handle_channel_strip_switch_ids(self, sw_id, value):
+        if sw_id - SID_FADER_TOUCH_SENSE_BASE is self.__strip_index:
+
+            if value == BUTTON_PRESSED:
+                self.main_script().set_is_master_strip_touched(True)
+
+                self.__last_display_strings = self.main_script().main_display().send_display_string(" Master",1,0,True)
+                self.__last_display_strings = self.main_script().main_display().send_display_string(self.get_master_volume_string(),0,0,True)
+            elif value == BUTTON_RELEASED:
+                self.main_script().set_is_master_strip_touched(False)
+                self.main_script().main_display().send_display_string(self.__last_display_strings[1],1,0)
+
         pass
 
     def refresh_state(self):
@@ -426,6 +438,16 @@ class MasterChannelStrip(P1NanoTGEComponent):
             if self.__last_meter_value != meter_value or meter_value != 0.0:
                 self.__last_meter_value = meter_value
                 self.send_midi((0xD1 , meter_value))
+        if self.main_script().get_is_master_strip_touched():
+            self.__last_display_strings = self.main_script().main_display().send_display_string(self.get_master_volume_string(),0,0,True)
+
+    def get_master_volume_string(self):
+        volume_value = self.__assigned_track.mixer_device.volume.value
+        volume_string = self.__assigned_track.mixer_device.volume.str_for_value(volume_value)
+        numeric_part = volume_string.split()[0]
+        numeric_part = float(numeric_part)
+        master_volume_string = f"{numeric_part:.1f}dB".rjust(6).ljust(7)
+        return master_volume_string
 
     def enable_meter_mode(self, Enabled):
         pass

@@ -8,6 +8,7 @@ class P1NanoTGEComponent(object):
     """ Baseclass for every 'sub component' of the Mackie Control. Just offers some """
 
     def __init__(self, main_script):
+        self.__last_send_messages = [[], [], [], []]
         self.__main_script = main_script
 
     def destroy(self):
