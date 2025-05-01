@@ -1,6 +1,6 @@
 from __future__ import absolute_import, print_function, unicode_literals
 
-import sys
+
 from itertools import chain
 
 from ableton.v2.base import liveobj_valid
@@ -257,14 +257,11 @@ class ChannelStrip(P1NanoTGEComponent):
 
     def __assigned_track_index(self):
         index = 0
-
-        for t in chain(self.song().visible_tracks, self.song().return_tracks):
-            if t == self.__assigned_track:
-                return index
-            index += 1
-
         if self.__assigned_track:
-            pass
+            for t in chain(self.song().visible_tracks, self.song().return_tracks):
+                if t == self.__assigned_track:
+                    return index
+                index += 1
         return None
 
     def __add_listeners(self):
@@ -339,6 +336,8 @@ class ChannelStrip(P1NanoTGEComponent):
                 for t in chain(self.song().tracks, self.song().return_tracks):
                     if t != self.__assigned_track:
                         t.solo = False
+    def select_track(self):
+        self.__select_track()
 
     def __select_track(self):
         if self.__assigned_track:
@@ -351,7 +350,6 @@ class ChannelStrip(P1NanoTGEComponent):
             elif self.application().view.is_view_visible('Arranger'):
                 pass
                 #Patched out the collapse thing
-                #sys.stderr.write("Not Doing the Collapse thing")
                 #if self.__assigned_track:
                 #    self.__assigned_track.view.is_collapsed = not self.__assigned_track.view.is_collapsed
 

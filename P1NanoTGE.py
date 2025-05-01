@@ -35,7 +35,7 @@ class P1NanoTGE(object):
         
         self.__components.append(self.__main_display_controller)
         self.__time_display = TimeDisplay(self)
-        
+
         self.__components.append(self.__time_display)
         self.__software_controller = SoftwareController(self)
         
@@ -64,6 +64,7 @@ class P1NanoTGE(object):
         self.is_pro_version = False
         self._received_firmware_version = False
         self._refresh_state_next_time = 0
+        self.__selected_channel = None
         self.__channel_strip_controller.set_assignment_mode(CSM_MULTI_TGE)
 
 
@@ -210,29 +211,42 @@ class P1NanoTGE(object):
             if note in range(SID_FIRST, SID_LAST + 1):
                 if note in display_switch_ids:
                     self.__handle_display_switch_ids(note, value)
-                if note in channel_strip_switch_ids + fader_touch_switch_ids:
+                if note in range(SID_SELECT_BASE,
+                                 SID_SELECT_BASE + NUM_CHANNEL_STRIPS):
+                    new_selected_channel = note - SID_SELECT_BASE
+                    if 0 <= new_selected_channel < NUM_CHANNEL_STRIPS:
+                        if new_selected_channel == self.__selected_channel:
+                            self.__channel_strips[
+                                max(0,new_selected_channel - 1)].select_track()
+                            self.__selected_channel = new_selected_channel
+                        else:
+                            self.__channel_strips[
+                                new_selected_channel].select_track()
+                            self.__selected_channel = new_selected_channel
+
+                elif note in channel_strip_switch_ids + fader_touch_switch_ids:
                     for s in self.__channel_strips:
                         s.handle_channel_strip_switch_ids(note, value)
                     self.__master_strip.handle_channel_strip_switch_ids(note, value)
-                if note in channel_strip_assignment_switch_ids:
+                elif note in channel_strip_assignment_switch_ids:
                     self.__channel_strip_controller.handle_assignment_switch_ids(
                         note, value)
-                if note in channel_strip_control_switch_ids:
+                elif note in channel_strip_control_switch_ids:
                     self.__channel_strip_controller.handle_control_switch_ids(
                         note, value)
-                if note in function_key_control_switch_ids:
+                elif note in function_key_control_switch_ids:
                     self.handle_function_key_switch_ids(
                         note, value)
-                if note in software_controls_switch_ids:
+                elif note in software_controls_switch_ids:
                     self.__software_controller.handle_software_controls_switch_ids(
                         note, value)
-                if note in transport_control_switch_ids:
+                elif note in transport_control_switch_ids:
                     self.__transport.handle_transport_switch_ids(note, value)
-                if note in marker_control_switch_ids:
+                elif note in marker_control_switch_ids:
                     self.__transport.handle_marker_switch_ids(note, value)
-                if note in jog_wheel_switch_ids:
+                elif note in jog_wheel_switch_ids:
                     self.__transport.handle_jog_wheel_switch_ids(note, value)
-                if note in user_foot_switch_ids:
+                elif note in user_foot_switch_ids:
                     self.__transport.handle_user_foot_switch_ids(note, value)
         elif midi_bytes[0] & 240 == CC_STATUS:
             cc_no = midi_bytes[1]

@@ -1,4 +1,3 @@
-import sys
 from itertools import chain
 
 
@@ -189,10 +188,6 @@ class ChannelStripController(P1NanoTGEComponent):
         if switch_id == SID_ASSIGNMENT_IO:
             if value == BUTTON_PRESSED:
                 self.__set_assignment_mode(CSM_IO)
-                #self.__set_assignment_mode(CSM_MULTI_TGE)
-
-
-
         elif switch_id == SID_ASSIGNMENT_SENDS:
             if value == BUTTON_PRESSED:
                 self.__set_assignment_mode(CSM_SENDS)
@@ -216,8 +211,7 @@ class ChannelStripController(P1NanoTGEComponent):
                 if self.shift_is_pressed():
                     self.__set_channel_offset(0)
                 else:
-                    self.__set_channel_offset(
-                        self.__strip_offset() - len(self.__channel_strips))
+                    self.__set_channel_offset(max(0, self.__strip_offset() - len(self.__channel_strips)))
         elif switch_id == SID_FADERBANK_NEXT_BANK:
             if value == BUTTON_PRESSED:
                 if self.shift_is_pressed():
@@ -417,6 +411,7 @@ class ChannelStripController(P1NanoTGEComponent):
                 return self.__plugin_mode_offsets[self.__plugin_mode] > 0
             elif self.tge_sends_slots() > 0:
                 return self.__send_mode_offset > 0
+            return False
         else:
             return False
 
@@ -490,12 +485,14 @@ class ChannelStripController(P1NanoTGEComponent):
                     t.available_output_routing_channels, target_string)
 
     def __set_channel_offset(self, new_offset):
+
         """
             Set and validate a new channel_strip offset, which shifts all available channel
             strips within all the available tracks or reutrn tracks
         """
         if new_offset < 0:
             new_offset = 0
+
         elif new_offset >= self.__controlled_num_of_tracks():
             new_offset = self.__controlled_num_of_tracks() - 1
         if self.__view_returns:
@@ -817,6 +814,8 @@ class ChannelStripController(P1NanoTGEComponent):
             - In IO mode, show the routing target of the first track
 
         """
+        #TODO REMOVE THIS, NOT NEEDED FOR THE NANO
+
         ass_string = [' ', ' ']
         if self.__assignment_mode == CSM_VOLPAN:
             ass_string = ['P', 'N']
@@ -996,7 +995,6 @@ class ChannelStripController(P1NanoTGEComponent):
             for i, track in enumerate(self.song().visible_tracks):
                 if track == self.song().view.selected_track:
                     self.__set_channel_offset(i)
-                    #sys.stderr.write(f"Setting channel offset to {i} for track {track.name}\n")
                     break
 
 
