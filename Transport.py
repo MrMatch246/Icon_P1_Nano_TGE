@@ -252,46 +252,30 @@ class Transport(P1NanoTGEComponent):
             if value == BUTTON_PRESSED:
                 self.__cursor_up_is_down = True
                 self.__cursor_repeat_delay = 0
-                self.send_midi(
-                    (NOTE_ON_STATUS, SID_JOG_CURSOR_UP, BUTTON_STATE_ON))
                 self.__on_cursor_up_pressed()
             elif value == BUTTON_RELEASED:
                 self.__cursor_up_is_down = False
-                self.send_midi(
-                    (NOTE_ON_STATUS, SID_JOG_CURSOR_UP, BUTTON_STATE_OFF))
         elif switch_id == SID_JOG_CURSOR_DOWN:
             if value == BUTTON_PRESSED:
                 self.__cursor_down_is_down = True
                 self.__cursor_repeat_delay = 0
-                self.send_midi(
-                    (NOTE_ON_STATUS, SID_JOG_CURSOR_DOWN, BUTTON_STATE_ON))
                 self.__on_cursor_down_pressed()
             elif value == BUTTON_RELEASED:
                 self.__cursor_down_is_down = False
-                self.send_midi(
-                    (NOTE_ON_STATUS, SID_JOG_CURSOR_DOWN, BUTTON_STATE_OFF))
         elif switch_id == SID_JOG_CURSOR_LEFT:
             if value == BUTTON_PRESSED:
                 self.__cursor_left_is_down = True
                 self.__cursor_repeat_delay = 0
-                self.send_midi(
-                    (NOTE_ON_STATUS, SID_JOG_CURSOR_LEFT, BUTTON_STATE_ON))
                 self.__on_cursor_left_pressed()
             elif value == BUTTON_RELEASED:
                 self.__cursor_left_is_down = False
-                self.send_midi(
-                    (NOTE_ON_STATUS, SID_JOG_CURSOR_LEFT, BUTTON_STATE_OFF))
         elif switch_id == SID_JOG_CURSOR_RIGHT:
             if value == BUTTON_PRESSED:
                 self.__cursor_right_is_down = True
                 self.__cursor_repeat_delay = 0
-                self.send_midi(
-                    (NOTE_ON_STATUS, SID_JOG_CURSOR_RIGHT, BUTTON_STATE_ON))
                 self.__on_cursor_right_pressed()
             elif value == BUTTON_RELEASED:
                 self.__cursor_right_is_down = False
-                self.send_midi(
-                    (NOTE_ON_STATUS, SID_JOG_CURSOR_RIGHT, BUTTON_STATE_OFF))
         elif switch_id == SID_JOG_ZOOM:
             if value == BUTTON_PRESSED:
                 if self.session_is_visible():
