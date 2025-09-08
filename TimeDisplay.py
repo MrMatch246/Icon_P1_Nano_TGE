@@ -55,7 +55,8 @@ class TimeDisplay(P1NanoTGEComponent):
         else:
             time_string = str(
                 self.song().get_current_smpte_song_time(self.__smpt_format))
-        time_string = [c for c in time_string if c not in ('.', ':')]
+        time_string = ''.join([c for c in time_string if c not in ('.', ':')])
+        time_string = list(time_string.lstrip("0").rjust(10, ' '))
         if self.__last_send_time != time_string:
             self.__last_send_time = time_string
             self.__send_time_string(time_string, show_points=True)
@@ -65,5 +66,6 @@ class TimeDisplay(P1NanoTGEComponent):
             char = time_string[9 - c].upper()
             char_code = g7_seg_led_conv_table[char]
             if show_points and c in [3, 5, 7]:
-                char_code += 64
+                if char != ' ':
+                    char_code += 64
             self.send_midi((176, 64 + c, char_code))
