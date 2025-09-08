@@ -632,22 +632,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -1376,22 +1376,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="func" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
@@ -1516,7 +1516,7 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
            rotate="0" val1="64" val2="7" diyNameQ="0"/>
       <ctl id="9" kind="button" valueType="func" value="36" name="Up" ctrl="0"
-           shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
+           shift="0" alt="0" cmd="0" key="0" keyName="" type="null" chan="0"
            rotate="0" val1="13" val2="64" diyNameQ="0"/>
       <ctl id="10" kind="button" valueType="func" value="112" name="MON 1"
            ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
@@ -2104,22 +2104,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
            rotate="0" val1="-1" val2="-1" diyNameQ="0"/>
       <ctl id="189" kind="button" valueType="func" value="3" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="14" val2="65" diyNameQ="0"/>
       <ctl id="190" kind="button" valueType="func" value="4" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="14" val2="66" diyNameQ="0"/>
       <ctl id="191" kind="button" valueType="func" value="6" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="15" val2="67" diyNameQ="0"/>
       <ctl id="192" kind="button" valueType="func" value="1" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="14" val2="67" diyNameQ="0"/>
       <ctl id="193" kind="button" valueType="func" value="2" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="14" val2="68" diyNameQ="0"/>
       <ctl id="194" kind="button" valueType="func" value="5" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="14" val2="69" diyNameQ="0"/>
       <ctl id="195" kind="button" valueType="func" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
@@ -2848,22 +2848,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -3266,13 +3266,15 @@
       <ctl id="101" kind="button" valueType="midi" value="54" name="TGE"
            lockBy="0" ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName=""
            type="note" chan="1" rotate="0" val1="-1" val2="-1"/>
-      <ctl id="102" kind="button" valueType="func" value="41" name="Send"
-           lockBy="0" ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName=""
-           type="note" chan="0" rotate="0" val1="-1" val2="-1"/>
-      <ctl id="103" kind="button" valueType="midi" value="55" name="Toggle IO"
+      <ctl id="102" kind="button" valueType="midi" value="55" name="Toggle IO"
            lockBy="0" ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName=""
            type="note" chan="1" rotate="0" val1="-1" val2="-1"/>
-      <ctl id="104" kind="button" valueType="func" value="43" name="Plug-in"
+      <ctl id="103" kind="button" valueType="hotkey" value="0" name="Export"
+           lockBy="0" ctrl="1" shift="1" alt="0" cmd="0" key="21" keyName="R"
+           type="nil" chan="0" rotate="0" val1="-1" val2="-1" ctrl2="0"
+           shift2="0" alt2="0" cmd2="0" key2="0" keyName2="" ctrl3="0" shift3="0"
+           alt3="0" cmd3="0" key3="0" keyName3="" diyNameQ="1"/>
+      <ctl id="104" kind="button" valueType="func" value="80" name="BTA"
            lockBy="0" ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName=""
            type="nil" chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="105" kind="button" valueType="hotkey" value="0" name="Auto"
@@ -3366,21 +3368,23 @@
            type="nil" chan="0" rotate="0" val1="-1" val2="-1" ctrl2="0"
            shift2="0" alt2="0" cmd2="0" key2="0" keyName2="" ctrl3="0" shift3="0"
            alt3="0" cmd3="0" key3="0" keyName3="" diyNameQ="1"/>
-      <ctl id="124" kind="button" valueType="func" value="80" name="BTA"
-           lockBy="0" ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName=""
-           type="nil" chan="0" rotate="0" val1="-1" val2="-1"/>
+      <ctl id="124" kind="button" valueType="hotkey" value="0" name="Bounce  2Track"
+           lockBy="0" ctrl="0" shift="0" alt="0" cmd="1" key="5" keyName="B"
+           type="null" chan="0" rotate="0" val1="-1" val2="-1" diyNameQ="1"
+           shift2="0" ctrl2="0" alt2="0" cmd2="0" key2="0" keyName2="" shift3="0"
+           ctrl3="0" alt3="0" cmd3="0" key3="0" keyName3=""/>
       <ctl id="125" kind="button" valueType="hotkey" value="0" name="Copy Time"
            lockBy="0" ctrl="1" shift="1" alt="0" cmd="0" key="7" keyName="D"
            type="nil" chan="0" rotate="0" val1="-1" val2="-1" ctrl2="1"
            shift2="1" alt2="0" cmd2="0" key2="27" keyName2="X" ctrl3="0"
            shift3="0" alt3="0" cmd3="0" key3="0" keyName3="" diyNameQ="1"/>
-      <ctl id="126" kind="button" valueType="hotkey" value="0" name="Paste Time"
-           lockBy="0" ctrl="1" shift="1" alt="0" cmd="0" key="25" keyName="V"
+      <ctl id="126" kind="button" valueType="hotkey" value="0" name="Cut   Time"
+           lockBy="0" ctrl="1" shift="1" alt="0" cmd="0" key="27" keyName="X"
            type="nil" chan="0" rotate="0" val1="-1" val2="-1" ctrl2="0"
            shift2="0" alt2="0" cmd2="0" key2="0" keyName2="" ctrl3="0" shift3="0"
            alt3="0" cmd3="0" key3="0" keyName3="" diyNameQ="1"/>
-      <ctl id="127" kind="button" valueType="hotkey" value="0" name="Cut   Time"
-           lockBy="0" ctrl="1" shift="1" alt="0" cmd="0" key="27" keyName="X"
+      <ctl id="127" kind="button" valueType="hotkey" value="0" name="Paste Time"
+           lockBy="0" ctrl="1" shift="1" alt="0" cmd="0" key="25" keyName="V"
            type="nil" chan="0" rotate="0" val1="-1" val2="-1" ctrl2="0"
            shift2="0" alt2="0" cmd2="0" key2="0" keyName2="" ctrl3="0" shift3="0"
            alt3="0" cmd3="0" key3="0" keyName3="" diyNameQ="1"/>
@@ -3428,11 +3432,9 @@
            type="nil" chan="0" rotate="0" val1="-1" val2="-1" ctrl2="0"
            shift2="0" alt2="0" cmd2="0" key2="0" keyName2="" ctrl3="0" shift3="0"
            alt3="0" cmd3="0" key3="0" keyName3="" diyNameQ="1"/>
-      <ctl id="140" kind="button" valueType="hotkey" value="0" name="Export"
-           lockBy="0" ctrl="1" shift="1" alt="0" cmd="0" key="21" keyName="R"
-           type="nil" chan="0" rotate="0" val1="-1" val2="-1" ctrl2="0"
-           shift2="0" alt2="0" cmd2="0" key2="0" keyName2="" ctrl3="0" shift3="0"
-           alt3="0" cmd3="0" key3="0" keyName3="" diyNameQ="1"/>
+      <ctl id="140" kind="button" valueType="null" value="0" name="" lockBy="0"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
+           chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="141" kind="button" valueType="hotkey" value="0" name="New"
            lockBy="0" ctrl="1" shift="0" alt="0" cmd="0" key="17" keyName="N"
            type="nil" chan="0" rotate="0" val1="-1" val2="-1" ctrl2="0"
@@ -3602,22 +3604,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -4362,22 +4364,22 @@
            cmd2="0" key2="0" keyName2="" ctrl3="0" shift3="0" alt3="0" cmd3="0"
            key3="0" keyName3=""/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="hotkey" value="0" name="" ctrl="1"
            shift="1" alt="1" cmd="0" key="64" keyName="F7" type="nil" chan="0"
@@ -5154,22 +5156,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="" ctrl="0"
-           shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
+           shift="0" alt="0" cmd="0" key="0" keyName="" type="null" chan="0"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -5932,22 +5934,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -6676,22 +6678,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -7420,22 +7422,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="85" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="func" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
@@ -8164,22 +8166,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -8908,22 +8910,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -9652,22 +9654,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -10396,22 +10398,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="func" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
@@ -11140,22 +11142,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -11884,22 +11886,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -12612,22 +12614,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="" ctrl="0"
-           shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
+           shift="0" alt="0" cmd="0" key="0" keyName="" type="null" chan="0"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -13356,22 +13358,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -13471,7 +13473,7 @@
            rotate="0" val1="-1" val2="-1"/>
     </mode>
   </slot>
-  <slot id="1" current="0" daw1="1" daw2="1" daw3="1">
+  <slot id="1" current="0" daw1="0" daw2="1" daw3="0">
     <mode id="1" mode="bitwig" protocol="0">
       <ctl id="1" kind="knob" valueType="midi" value="16" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="cc" chan="1"
@@ -14102,22 +14104,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -14846,22 +14848,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="func" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
@@ -14986,7 +14988,7 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
            rotate="0" val1="64" val2="7" diyNameQ="0"/>
       <ctl id="9" kind="button" valueType="func" value="36" name="Up" ctrl="0"
-           shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
+           shift="0" alt="0" cmd="0" key="0" keyName="" type="null" chan="0"
            rotate="0" val1="13" val2="64" diyNameQ="0"/>
       <ctl id="10" kind="button" valueType="func" value="112" name="MON 1"
            ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
@@ -15574,22 +15576,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
            rotate="0" val1="-1" val2="-1" diyNameQ="0"/>
       <ctl id="189" kind="button" valueType="func" value="3" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="14" val2="65" diyNameQ="0"/>
       <ctl id="190" kind="button" valueType="func" value="4" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="14" val2="66" diyNameQ="0"/>
       <ctl id="191" kind="button" valueType="func" value="6" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="15" val2="67" diyNameQ="0"/>
       <ctl id="192" kind="button" valueType="func" value="1" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="14" val2="67" diyNameQ="0"/>
       <ctl id="193" kind="button" valueType="func" value="2" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="14" val2="68" diyNameQ="0"/>
       <ctl id="194" kind="button" valueType="func" value="5" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="14" val2="69" diyNameQ="0"/>
       <ctl id="195" kind="button" valueType="func" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
@@ -16318,22 +16320,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -17062,22 +17064,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -17822,22 +17824,22 @@
            cmd2="0" key2="0" keyName2="" ctrl3="0" shift3="0" alt3="0" cmd3="0"
            key3="0" keyName3=""/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="hotkey" value="0" name="" ctrl="1"
            shift="1" alt="1" cmd="0" key="64" keyName="F7" type="nil" chan="0"
@@ -18614,22 +18616,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="" ctrl="0"
-           shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
+           shift="0" alt="0" cmd="0" key="0" keyName="" type="null" chan="0"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -19392,22 +19394,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -20136,22 +20138,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -20880,22 +20882,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="85" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="func" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
@@ -21624,22 +21626,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -22368,22 +22370,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -23112,22 +23114,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -23856,22 +23858,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="func" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
@@ -24600,22 +24602,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -25344,22 +25346,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -26072,22 +26074,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="" ctrl="0"
-           shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
+           shift="0" alt="0" cmd="0" key="0" keyName="" type="null" chan="0"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -26816,22 +26818,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -27562,22 +27564,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -28306,22 +28308,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="func" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
@@ -28446,7 +28448,7 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
            rotate="0" val1="64" val2="7" diyNameQ="0"/>
       <ctl id="9" kind="button" valueType="func" value="36" name="Up" ctrl="0"
-           shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
+           shift="0" alt="0" cmd="0" key="0" keyName="" type="null" chan="0"
            rotate="0" val1="13" val2="64" diyNameQ="0"/>
       <ctl id="10" kind="button" valueType="func" value="112" name="MON 1"
            ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
@@ -29034,22 +29036,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
            rotate="0" val1="-1" val2="-1" diyNameQ="0"/>
       <ctl id="189" kind="button" valueType="func" value="3" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="14" val2="65" diyNameQ="0"/>
       <ctl id="190" kind="button" valueType="func" value="4" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="14" val2="66" diyNameQ="0"/>
       <ctl id="191" kind="button" valueType="func" value="6" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="15" val2="67" diyNameQ="0"/>
       <ctl id="192" kind="button" valueType="func" value="1" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="14" val2="67" diyNameQ="0"/>
       <ctl id="193" kind="button" valueType="func" value="2" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="14" val2="68" diyNameQ="0"/>
       <ctl id="194" kind="button" valueType="func" value="5" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="14" val2="69" diyNameQ="0"/>
       <ctl id="195" kind="button" valueType="func" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
@@ -29778,22 +29780,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -30522,22 +30524,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -31282,22 +31284,22 @@
            cmd2="0" key2="0" keyName2="" ctrl3="0" shift3="0" alt3="0" cmd3="0"
            key3="0" keyName3=""/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="hotkey" value="0" name="" ctrl="1"
            shift="1" alt="1" cmd="0" key="64" keyName="F7" type="nil" chan="0"
@@ -32074,22 +32076,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="" ctrl="0"
-           shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
+           shift="0" alt="0" cmd="0" key="0" keyName="" type="null" chan="0"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -32852,22 +32854,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -33596,22 +33598,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -34340,22 +34342,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="85" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="func" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
@@ -35084,22 +35086,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -35828,22 +35830,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -36572,22 +36574,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -37316,22 +37318,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="func" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
@@ -38060,22 +38062,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -38804,22 +38806,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="Loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -39532,22 +39534,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="" ctrl="0"
-           shift="0" alt="0" cmd="0" key="0" keyName="" type="nil" chan="0"
+           shift="0" alt="0" cmd="0" key="0" keyName="" type="null" chan="0"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
@@ -40276,22 +40278,22 @@
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
            rotate="0" val1="-1" val2="-1"/>
       <ctl id="189" kind="button" valueType="func" value="91" name="Rewind"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="190" kind="button" valueType="func" value="92" name="Fast Forward"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="191" kind="button" valueType="func" value="86" name="loop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="192" kind="button" valueType="func" value="93" name="Stop"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="193" kind="button" valueType="func" value="94" name="Play"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="194" kind="button" valueType="func" value="95" name="Record"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
+           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
       <ctl id="195" kind="button" valueType="midi" value="0" name="" ctrl="0"
            shift="0" alt="0" cmd="0" key="0" keyName="" type="" chan="1"
