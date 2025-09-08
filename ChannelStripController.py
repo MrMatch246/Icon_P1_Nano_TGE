@@ -815,7 +815,7 @@ class ChannelStripController(P1NanoTGEComponent):
 
         """
         #TODO REMOVE THIS, NOT NEEDED FOR THE NANO
-
+        return
         ass_string = [' ', ' ']
         if self.__assignment_mode == CSM_VOLPAN:
             ass_string = ['P', 'N']
@@ -844,8 +844,9 @@ class ChannelStripController(P1NanoTGEComponent):
             else:
                 pass
         elif self.__assignment_mode == CSM_MULTI_TGE:
-            #TODO TGE: Implement this correctly once external display arrives
-            ass_string = ['T','G']
+            #TODO TGE: Implement this correctly once external display arrives ?
+            # Actually this doesnt seem to do anything rn
+            ass_string = ['9','9']
         self.send_midi((CC_STATUS, 75, g7_seg_led_conv_table[ass_string[0]]))
         self.send_midi((CC_STATUS, 74, g7_seg_led_conv_table[ass_string[1]]))
 
