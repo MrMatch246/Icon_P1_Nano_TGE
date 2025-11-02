@@ -260,6 +260,12 @@ class ChannelStripController(P1NanoTGEComponent):
                 else:
                     new_routing = available_routings[current_routing_index]
                 self.__set_routing_target(channel_strip, new_routing)
+    def handle_toggle_auto_arm(self):
+        for channel_strip in self.__channel_strips:
+            if channel_strip.is_selected():
+                track = channel_strip.assigned_track()
+                if track != None:
+                    track.implicit_arm = not track.implicit_arm
 
     def handle_vpot_rotation(self, strip_index, stack_offset, cc_value):
         """ Forwarded to us by the channel_strips """
