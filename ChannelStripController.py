@@ -3,7 +3,7 @@ from itertools import chain
 
 from _Generic.Devices import *
 
-from settings import auto_arm_on_track_select_on_by_default
+from .settings import auto_arm_on_track_select_on_by_default
 from .P1NanoTGEComponent import *
 from ableton.v3.live import track_index
 
