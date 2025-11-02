@@ -3333,7 +3333,7 @@
       <ctl id="116" kind="button" valueType="null" value="0" name="" lockBy="132"
            ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="null"
            chan="0" rotate="0" val1="-1" val2="-1"/>
-      <ctl id="117" kind="button" valueType="midi" value="55" name="Toggle IO"
+      <ctl id="117" kind="button" valueType="midi" value="56" name="Auto Arming"
            lockBy="0" ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName=""
            type="note" chan="1" rotate="0" val1="-1" val2="-1"/>
       <ctl id="118" kind="button" valueType="hotkey" value="0" name="MIDI Track"
@@ -3524,9 +3524,9 @@
       <ctl id="165" kind="button" valueType="midi" value="95" name="Nexus Random"
            lockBy="0" ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName=""
            type="cc" chan="1" rotate="0" val1="-1" val2="-1"/>
-      <ctl id="166" kind="button" valueType="null" value="0" name="" lockBy="0"
-           ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
-           chan="0" rotate="0" val1="-1" val2="-1"/>
+      <ctl id="166" kind="button" valueType="midi" value="55" name="Toggle IO"
+           lockBy="0" ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName=""
+           type="note" chan="1" rotate="0" val1="-1" val2="-1"/>
       <ctl id="167" kind="button" valueType="null" value="0" name="" lockBy="0"
            ctrl="0" shift="0" alt="0" cmd="0" key="0" keyName="" type="nil"
            chan="0" rotate="0" val1="-1" val2="-1" ctrl2="0" shift2="0"
