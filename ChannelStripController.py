@@ -2,6 +2,8 @@ from itertools import chain
 
 
 from _Generic.Devices import *
+
+from settings import auto_arm_on_track_select_on_by_default
 from .P1NanoTGEComponent import *
 from ableton.v3.live import track_index
 
@@ -68,6 +70,7 @@ class ChannelStripController(P1NanoTGEComponent):
 
     def __init__(self, main_script, channel_strips, master_strip, main_display_controller):
         P1NanoTGEComponent.__init__(self, main_script)
+        self.__auto_arm = auto_arm_on_track_select_on_by_default
         self.__left_extensions = []
         self.__right_extensions = []
         self.__own_channel_strips = channel_strips
@@ -260,7 +263,12 @@ class ChannelStripController(P1NanoTGEComponent):
                 else:
                     new_routing = available_routings[current_routing_index]
                 self.__set_routing_target(channel_strip, new_routing)
+
+    def auto_arm_enabled(self):
+        return self.__auto_arm
+
     def handle_toggle_auto_arm(self):
+        self.__auto_arm = not self.__auto_arm
         for channel_strip in self.__channel_strips:
             if channel_strip.is_selected():
                 track = channel_strip.assigned_track()
@@ -990,6 +998,8 @@ class ChannelStripController(P1NanoTGEComponent):
     def __on_selected_track_changed(self):
         """ Notifier, called as soon as the selected track has changed """
         st = self.__last_attached_selected_track
+        if self.__last_attached_selected_track and self.__last_attached_selected_track.can_be_armed:
+            self.__last_attached_selected_track.implicit_arm = False
         if st and st.devices_has_listener(
             self.__on_selected_device_chain_changed):
             st.remove_devices_listener(self.__on_selected_device_chain_changed)
@@ -1001,6 +1011,9 @@ class ChannelStripController(P1NanoTGEComponent):
         if not self.__view_returns:
             for i, track in enumerate(self.song().visible_tracks):
                 if track == self.song().view.selected_track:
+                    if self.auto_arm_enabled():
+                        if track.can_be_armed:
+                            track.implicit_arm = True
                     self.__set_channel_offset(i)
                     break
 
