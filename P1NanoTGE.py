@@ -64,7 +64,8 @@ class P1NanoTGE(object):
         self.is_pro_version = False
         self._received_firmware_version = False
         self._refresh_state_next_time = 0
-        self.__selected_channel = None
+        self.__pending_bank_jump = 0
+        self.__pending_bank_base_idx = 0
         self.__channel_strip_controller.set_assignment_mode(CSM_MULTI_TGE)
 
 
@@ -79,6 +80,7 @@ class P1NanoTGE(object):
     def disconnect(self):
         for c in self.__components:
             c.destroy()
+        self.__components = []
         sys.stderr.write('P1NanoTGE script unloaded')
 
     def __del__(self):
@@ -213,16 +215,14 @@ class P1NanoTGE(object):
                     self.__handle_display_switch_ids(note, value)
                 if note in range(SID_SELECT_BASE,
                                  SID_SELECT_BASE + NUM_CHANNEL_STRIPS):
-                    new_selected_channel = note - SID_SELECT_BASE
-                    if 0 <= new_selected_channel < NUM_CHANNEL_STRIPS:
-                        if new_selected_channel == self.__selected_channel:
-                            self.__channel_strips[
-                                max(0,new_selected_channel - 1)].select_track()
-                            self.__selected_channel = new_selected_channel
+                    if value == BUTTON_PRESSED:
+                        strip_index = note - SID_SELECT_BASE
+                        if self.__pending_bank_jump != 0:
+                            self.__channel_strip_controller.select_track_at_index(
+                                self.__pending_bank_base_idx + self.__pending_bank_jump + strip_index)
+                            self.__pending_bank_jump = 0
                         else:
-                            self.__channel_strips[
-                                new_selected_channel].select_track()
-                            self.__selected_channel = new_selected_channel
+                            self.__channel_strip_controller.select_track_by_offset(strip_index)
 
                 elif note in channel_strip_switch_ids + fader_touch_switch_ids:
                     for s in self.__channel_strips:
@@ -232,8 +232,13 @@ class P1NanoTGE(object):
                     self.__channel_strip_controller.handle_assignment_switch_ids(
                         note, value)
                 elif note in channel_strip_control_switch_ids:
-                    self.__channel_strip_controller.handle_control_switch_ids(
-                        note, value)
+                    if note in (SID_FADERBANK_NEXT_BANK, SID_FADERBANK_PREV_BANK) and value == BUTTON_PRESSED:
+                        direction = NUM_CHANNEL_STRIPS if note == SID_FADERBANK_NEXT_BANK else -NUM_CHANNEL_STRIPS
+                        self.__pending_bank_jump = direction
+                        self.__pending_bank_base_idx = self.__channel_strip_controller.current_track_index()
+                    else:
+                        self.__channel_strip_controller.handle_control_switch_ids(
+                            note, value)
                 elif note in function_key_control_switch_ids:
                     self.handle_function_key_switch_ids(
                         note, value)

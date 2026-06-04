@@ -1,4 +1,5 @@
 import sys
+import time
 
 from ableton.v2.base import move_current_song_time
 from .P1NanoTGEComponent import *
@@ -24,6 +25,8 @@ class Transport(P1NanoTGEComponent):
         self.__jog_step_count_forward = 0
         self.__jog_step_count_backwards = 0
         self.__last_focussed_clip_play_state = CLIP_STATE_INVALID
+        self.__last_cursor_nav_direction = 0
+        self.__last_cursor_nav_time = 0.0
         self.song().add_record_mode_listener(self.__update_record_button_led)
         self.song().add_is_playing_listener(self.__update_play_button_led)
         self.song().add_loop_listener(self.__update_loop_button_led)
@@ -307,16 +310,42 @@ class Transport(P1NanoTGEComponent):
         if self.__zoom_button_down:
             self.application().view.zoom_view(nav.up, '', self.alt_is_pressed())
         else:
-            self.focus_visible_detail_view()
-            self.application().view.scroll_view(nav.up, 'Arranger', self.alt_is_pressed())
+            now = time.time()
+            if self.__last_cursor_nav_direction == 1 and now - self.__last_cursor_nav_time < 0.25:
+                self.send_midi((NOTE_ON_STATUS, SID_SELECT_CH1, BUTTON_STATE_ON))
+                return
+            self.__last_cursor_nav_direction = -1
+            self.__last_cursor_nav_time = now
+            tracks = self.song().visible_tracks
+            if tracks:
+                current = self.song().view.selected_track
+                for i, t in enumerate(tracks):
+                    if t == current:
+                        if i > 0:
+                            self.song().view.selected_track = tracks[i - 1]
+                        break
+            self.send_midi((NOTE_ON_STATUS, SID_SELECT_CH1, BUTTON_STATE_ON))
 
     def __on_cursor_down_pressed(self):
         nav = Live.Application.Application.View.NavDirection
         if self.__zoom_button_down:
             self.application().view.zoom_view(nav.down, '', self.alt_is_pressed())
         else:
-            self.focus_visible_detail_view()
-            self.application().view.scroll_view(nav.down, 'Arranger', self.alt_is_pressed())
+            now = time.time()
+            if self.__last_cursor_nav_direction == -1 and now - self.__last_cursor_nav_time < 0.25:
+                self.send_midi((NOTE_ON_STATUS, SID_SELECT_CH1, BUTTON_STATE_ON))
+                return
+            self.__last_cursor_nav_direction = 1
+            self.__last_cursor_nav_time = now
+            tracks = self.song().visible_tracks
+            if tracks:
+                current = self.song().view.selected_track
+                for i, t in enumerate(tracks):
+                    if t == current:
+                        if i < len(tracks) - 1:
+                            self.song().view.selected_track = tracks[i + 1]
+                        break
+            self.send_midi((NOTE_ON_STATUS, SID_SELECT_CH1, BUTTON_STATE_ON))
 
     def __on_cursor_left_pressed(self):
         nav = Live.Application.Application.View.NavDirection

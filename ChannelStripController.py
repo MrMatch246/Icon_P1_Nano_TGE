@@ -1,3 +1,4 @@
+import time
 from itertools import chain
 
 
@@ -109,6 +110,7 @@ class ChannelStripController(P1NanoTGEComponent):
         self.__reassign_channel_strip_offsets()
         self.__reassign_channel_strip_parameters(for_display_only=False)
         self._last_assignment_mode = self.__assignment_mode
+        self.__last_track_nav_time = 0
 
     def destroy(self):
         self.song().remove_visible_tracks_listener(
@@ -209,40 +211,26 @@ class ChannelStripController(P1NanoTGEComponent):
 
     def handle_control_switch_ids(self, switch_id, value):
         """ Missing def added """
-        if switch_id == SID_FADERBANK_PREV_BANK:
+        if switch_id == SID_FADERBANK_PREV_CH:
             if value == BUTTON_PRESSED:
                 if self.shift_is_pressed():
-                    self.__set_channel_offset(0)
+                    tracks = self.song().return_tracks if self.__view_returns else self.song().visible_tracks
+                    self.song().view.selected_track = tracks[0]
                 else:
-                    self.__set_channel_offset(max(0, self.__strip_offset() - len(self.__channel_strips)))
-        elif switch_id == SID_FADERBANK_NEXT_BANK:
-            if value == BUTTON_PRESSED:
-                if self.shift_is_pressed():
-                    last_possible_offset = (
-                                               (self.__controlled_num_of_tracks() - self.__strip_offset()) // len(self.__channel_strips)
-                                           ) * len(self.__channel_strips) + self.__strip_offset()
-                    if last_possible_offset == self.__controlled_num_of_tracks():
-                        last_possible_offset -= len(self.__channel_strips)
-                    self.__set_channel_offset(last_possible_offset)
-                elif self.__strip_offset() < self.__controlled_num_of_tracks() - len(
-                    self.__channel_strips):
-                    self.__set_channel_offset(
-                        self.__strip_offset() + len(self.__channel_strips))
-        elif switch_id == SID_FADERBANK_PREV_CH:
-            if value == BUTTON_PRESSED:
-                if self.shift_is_pressed():
-                    self.__set_channel_offset(0)
-                else:
-                    self.__set_channel_offset(self.__strip_offset() - 1)
+                    now = time.time()
+                    if now - self.__last_track_nav_time >= 0.15:
+                        self.__last_track_nav_time = now
+                        self.select_track_by_offset(-1)
         elif switch_id == SID_FADERBANK_NEXT_CH:
             if value == BUTTON_PRESSED:
                 if self.shift_is_pressed():
-                    self.__set_channel_offset(
-                        self.__controlled_num_of_tracks() - len(
-                            self.__channel_strips))
-                elif self.__strip_offset() < self.__controlled_num_of_tracks() - len(
-                    self.__channel_strips):
-                    self.__set_channel_offset(self.__strip_offset() + 1)
+                    tracks = self.song().return_tracks if self.__view_returns else self.song().visible_tracks
+                    self.song().view.selected_track = tracks[-1]
+                else:
+                    now = time.time()
+                    if now - self.__last_track_nav_time >= 0.15:
+                        self.__last_track_nav_time = now
+                        self.select_track_by_offset(1)
         elif switch_id == SID_FADERBANK_FLIP:
             if value == BUTTON_PRESSED:
                 self.__toggle_flip()
@@ -367,6 +355,30 @@ class ChannelStripController(P1NanoTGEComponent):
         if self.__view_returns:
             return self.__bank_cha_offset_returns
         return self.__bank_cha_offset
+
+    def current_track_index(self):
+        tracks = self.song().return_tracks if self.__view_returns else self.song().visible_tracks
+        selected = self.song().view.selected_track
+        for i, track in enumerate(tracks):
+            if track == selected:
+                return i
+        return 0
+
+    def select_track_by_offset(self, offset):
+        tracks = self.song().return_tracks if self.__view_returns else self.song().visible_tracks
+        if not tracks:
+            return
+        new_index = max(0, min(len(tracks) - 1, self.current_track_index() + offset))
+        self.song().view.selected_track = tracks[new_index]
+        self.send_midi((NOTE_ON_STATUS, SID_SELECT_CH1, BUTTON_STATE_ON))
+
+    def select_track_at_index(self, index):
+        tracks = self.song().return_tracks if self.__view_returns else self.song().visible_tracks
+        if not tracks:
+            return
+        new_index = max(0, min(len(tracks) - 1, index))
+        self.song().view.selected_track = tracks[new_index]
+        self.send_midi((NOTE_ON_STATUS, SID_SELECT_CH1, BUTTON_STATE_ON))
 
     def __controlled_num_of_tracks(self):
         """
@@ -1015,6 +1027,7 @@ class ChannelStripController(P1NanoTGEComponent):
                         if track.can_be_armed:
                             track.implicit_arm = True
                     self.__set_channel_offset(i)
+                    self.send_midi((NOTE_ON_STATUS, SID_SELECT_CH1, BUTTON_STATE_ON))
                     break
 
 
